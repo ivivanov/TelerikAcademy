@@ -1,0 +1,79 @@
+table
+{
+	background-color: #595959;
+	font-family: Arial, Calibri;
+	color: #595959;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+a
+{
+	color: #ECECA4;
+    text-decoration: none;	
+}
+
+th
+{
+	font-size: 22px;
+	color: #ADA6A5;
+	font-weight: normal;
+	text-align: left;
+	padding-top: 5px;
+}
+
+td:first-of-type
+{
+	padding-right: 60px;
+	font-style:italic;
+	font-weight:normal;
+	color: white;
+}
+
+td:nth-child(2n)
+{
+	text-align: left;
+	padding-right:40px;
+}
+
+td
+{
+	padding: 5px 0 3px 0;
+}
+
+tr
+{
+	margin: 20px 0 0 0;
+}
+
+span
+{
+	display: block;
+}
+
+#support
+{
+	color: red;
+}
+
+#notAnswered
+{
+	color: #F4A500;
+}
+
+.gold
+{
+	color: #ECECA4;
+	font-style: normal;
+}
+
+.grey
+{
+	color: #ADA6A5;
+}
+
+#greenCircle:before
+{
+	content: url(../images/circle.png)" ";
+}

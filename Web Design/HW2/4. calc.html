@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Windows Calculator</title>
+		<link href="css styles/calculator.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div id="mainCalc">
+			<div>
+				<ul id="menu">
+					<li><button>View</button></li>
+					<li><button>Edit</button></li>
+					<li><button>Help</button></li>
+				</ul>
+			</div>
+			
+			<div id="underMenu">
+			
+				<div id="calcDisplay">
+					<input type="text" value="8854455" />
+				</div>
+				
+				<div id="table" class="table">
+					<div id="innertablediv" class="table">
+						<div class="row">
+							<div class="cell">0000</div>
+							<div class="cell">0000</div>
+							<div class="cell">0000</div>
+							<div class="cell">0000</div>
+							<div class="cell">0000</div>
+							<div class="cell">0000</div>
+							<div class="cell">0000</div>
+							<div class="cell">0000</div>
+						</div>
+						<div class="row">
+							<div id="align1" class="cell">63</div>
+							<div class="cell"></div>
+							<div class="cell"></div>
+							<div class="cell"></div>
+							<div id="align2" class="cell">47</div>
+							<div class="cell"></div>
+							<div class="cell"></div>
+							<div id="align3" class="cell">32</div>
+						</div>
+						<div class="row">
+							<div class="cell">0000</div>
+							<div class="cell">0000</div>
+							<div class="cell">1000</div>
+							<div class="cell">0111</div>
+							<div class="cell">0001</div>
+							<div class="cell">1011</div>
+							<div class="cell">1011</div>
+							<div class="cell">0111</div>
+						</div>
+						<div class="row">
+							<div id="align4" class="cell">31</div>
+							<div class="cell"></div>
+							<div class="cell"></div>
+							<div class="cell"></div>
+							<div id="align5" class="cell">15</div>
+							<div class="cell"></div>
+							<div class="cell"></div>
+							<div id="align6" class="cell">0</div>
+						</div>
+					</div>
+				</div>
+			
+				<div id="numeric">
+					<div id="radio">
+						<div id="rad">
+							<p><input type="radio" name="system" value="Hex"> Hex</p>
+							<p><input type="radio" name="system" value="Dec" checked> Dec</p>
+							<p><input type="radio" name="system" value="Oct"> Oct</p>
+							<p><input type="radio" name="system" value="Bin"> Bin</p>
+						</div>
+					</div>
+					<div id="radio">
+						<div id="rad">
+							<p><input type="radio" name="word" value="Qword" checked> Qword</p>
+							<p><input type="radio" name="word" value="Dword"> Dword</p>
+							<p><input type="radio" name="word" value="Word"> Word</p>
+							<p><input type="radio" name="word" value="Byte"> Byte</p>
+						</div>
+					</div>
+				</div>
+				
+				<div><button class="notact" name=" " value=" " > </button></div>
+				<div><button class="bordbgr" class= name="Mod">Mod</button></div>
+				<div><button class="notact" name="A">A</button></div>
+				<div><button class="bordbgr" name="MC">MC</button></div>
+				<div><button class="bordbgr" name="MR">MR</button></div>
+				<div><button class="bordbgr" name="MS">MS</button></div>
+				<div><button class="bordbgr" name="M+">M+</button></div>
+				<div><button class="bordbgr" name="M-">M-</button></div>
+				<div><button class="margbord" name="(">(</button></div>
+				<div><button class="margbord" name=")">)</button></div>
+				<div><button class="margnotact" name="B">B</button></div>
+				<div><button class="margbord" id="arrow" name="<-">&#8592 </button></div>
+				<div><button class="margbord" name="CE">CE</button></div>
+				<div><button class="margbord" name="C">C</button></div>
+				<div><button class="margbord" name="+-">&#177 </button></div>
+				<div><button class="margnotact" name="sqrt">&#8730 </button></div>
+				<div><button class="margbord" name="RoL">RoL</button></div>
+				<div><button class="margbord" name="RoR">RoR</button></div>
+				<div><button class="margnotact" name="C">C</button></div>
+				<div><button class="margnum" name="7">7</button></div>
+				<div><button class="margnum" name="8">8</button></div>
+				<div><button class="margnum" name="9">9</button></div>
+				<div><button class="margbord" name="/">/</button></div>
+				<div><button class="margnotact" name="%">%</button></div>
+				<div><button class="margbord" name="Or">Or</button></div>
+				<div><button class="margbord" name="Xor">Xor</button></div>
+				<div><button class="margnotact" name="D">D</button></div>
+				<div><button class="margnum" name="4">4</button></div>
+				<div><button class="margnum" name="5">5</button></div>
+				<div><button class="margnum" name="6">6</button></div>
+				<div><button class="margbord" name="*">*</button></div>
+				<div><button class="margnotact" name="1/x">1/x</button></div>
+				<div><button class="margbord" name="Lsh">Lsh</button></div>
+				<div><button class="margbord" name="Rsh">Rsh</button></div>
+				<div><button class="margnotact" name="E">E</button></div>
+				<div><button class="margnum" name="1">1</button></div>
+				<div><button class="margnum" name="2">2</button></div>
+				<div><button class="margnum" name="3">3</button></div>
+				<div><button class="margbord" name="-">-</button></div>
+				<div><button class="margbord" id="equal" name="=">=</button></div>
+				<div><button class="margbord" name="Not">Not</button></div>
+				<div><button class="margbord" name="And">And</button></div>
+				<div><button class="margnotact" name="F">F</button></div>
+				<div><button class="margnum" id="zero" name="0">0</button></div>
+				<div><button class="margnotact" name=".">. </button></div>
+				<div><button class="margbord" name="+">+</button></div>
+				
+			</div>
+		</div>
+	</body>
+</html>

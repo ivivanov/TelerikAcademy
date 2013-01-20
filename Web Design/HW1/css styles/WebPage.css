@@ -1,0 +1,61 @@
+body
+{
+	background-color: #A9A9A9;
+	font-size: 16px;
+}
+
+header
+{
+	text-align: center;
+	font-size: 18px;
+}
+
+h1
+{
+	color: #FAFAD2;
+}
+
+section header
+{
+	text-align: left;
+}
+
+ul li
+{
+	list-style-type: none;
+}
+
+nav a
+{
+	color: white;
+	font-weight: bold;
+}
+
+.current
+{
+	background: #D3D3D3;
+}
+
+li:last-child
+{
+	color: #FFF;
+	text-decoration: underline;
+}
+
+a
+{
+	text-decoration: none;
+	color: black;
+}
+
+footer
+{
+	text-align: center;
+	font-size: 17px;
+}
+
+section footer
+{
+	text-align: left;
+	font-size: 14px;
+}

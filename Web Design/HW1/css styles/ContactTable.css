@@ -1,0 +1,53 @@
+table
+{
+	font-family: Segoe UI, Calibri;
+	font-size: 18px;
+	font-style: normal;
+	text-align: left;
+	width: 750px;
+	border-collapse: collapse;
+}
+
+td:nth-child(1), td:nth-child(2), td:nth-child(3), th:nth-child(1), th:nth-child(2), th:nth-child(3)
+{
+	border-right: 1px solid #C5C3AB;
+}
+
+tbody tr:last-child
+{
+	border-bottom: 1px solid #C5C3AB;
+}
+
+th, td
+{
+	padding: 5px;
+}
+
+th
+{
+	background-image:url(../images/gradient.png);
+	background-size:70px;
+	color: white;
+	font-weight: normal;
+	box-shadow: 2px 2px 2px #888888;
+}
+
+tr:nth-child(2n)
+{
+	background-color: #ECECD8;
+}
+
+.flagDE:before
+{
+	content: url(../images/de.png)" ";
+}
+
+.flagMX:before
+{
+	content: url(../images/mx.png)" ";
+}
+
+.flagUK:before
+{
+	content: url(../images/uk.png)" ";
+}

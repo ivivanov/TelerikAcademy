@@ -1,0 +1,22 @@
+@font-face
+{
+	font-family: Edwardian;
+	src: 	url('../fonts/itcedscr.ttf');
+}
+
+span 
+{
+	font-family: Consolas;
+	color: #0094ff;
+	display: block;
+}
+	span:first-line
+	{	
+		font-weight: bold;
+	}
+	span:first-letter
+	{
+		font-size: 40px;
+		font-family:Edwardian;
+		padding-right:5px;
+	}

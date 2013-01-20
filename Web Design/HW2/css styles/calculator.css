@@ -1,0 +1,321 @@
+body
+{
+	padding: 10px 0 0 10px;
+}
+
+#mainCalc
+{
+	width: 407px;
+	height: 350px;
+	background: #DCE6F2;
+	font-size: 12px;
+	font-family: Segoe UI;
+	border: 1px solid #5D6C7A;
+	padding: 0px;
+}
+	#menu
+	{
+		background-image: linear-gradient(bottom, rgb(223,228,244) 53%, rgb(254,254,255) 78%);
+		background-image: -o-linear-gradient(bottom, rgb(223,228,244) 53%, rgb(254,254,255) 78%);
+		background-image: -moz-linear-gradient(bottom, rgb(223,228,244) 53%, rgb(254,254,255) 78%);
+		background-image: -webkit-linear-gradient(bottom, rgb(223,228,244) 53%, rgb(254,254,255) 78%);
+		background-image: -ms-linear-gradient(bottom, rgb(223,228,244) 53%, rgb(254,254,255) 78%);
+		
+		background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0.53, rgb(223,228,244)),
+			color-stop(0.78, rgb(254,254,255))
+		);
+		margin: 0px;
+		height: 18px;
+		padding:0px;
+		border-bottom: 1px solid #B6BCCC;
+	}
+	
+ul li
+{
+	list-style-type: none;
+}
+
+	#menu li
+	{
+		float: left;
+	}
+		#menu li button
+		{
+			width:34px;
+			height:27px;
+			margin:0px;
+			border: 0px;
+			padding: 0 0 8px 0;
+			background-color: rgba(0,0,0,0);
+			margin-right:5px;
+			font-size:11px;
+			font-family: Segoe UI;
+			text-align:center;
+		}
+			#menu li button:first-letter
+			{
+				text-decoration: underline;
+			}
+
+#underMenu
+{
+	height: 319px;
+	border-top: 1px solid #F0F0F0;
+	padding-top: 6px;
+}
+	#underMenu > div, #underMenu > form
+	{
+		margin-top: 5px;
+		margin-left: 11px;
+		border-radius:3px;
+	}	
+			
+	#calcDisplay
+	{
+	background-image: linear-gradient(bottom, rgb(254,255,255) 0%, rgb(229,239,251) 71%);
+    background-image: -o-linear-gradient(bottom, rgb(254,255,255) 0%, rgb(229,239,251) 71%);
+    background-image: -moz-linear-gradient(bottom, rgb(254,255,255) 0%, rgb(229,239,251) 71%);
+    background-image: -webkit-linear-gradient(bottom, rgb(254,255,255) 0%, rgb(229,239,251) 71%);
+    background-image: -ms-linear-gradient(bottom, rgb(254,255,255) 0%, rgb(229,239,251) 71%);
+    
+    background-image: -webkit-gradient(
+    	linear,
+    	left bottom,
+    	left top,
+    	color-stop(0, rgb(254,255,255)),
+    	color-stop(0.71, rgb(229,239,251))
+    );
+		width: 383px;
+		text-align: right;
+		padding-top: 15px;
+		padding-bottom: 7px;
+		border: 1px solid #8E9CAD;
+	}
+		#calcDisplay input
+		{
+			width: 100%;
+			text-align:right;
+			border: 0px;
+			background-color: rgba(0,0,0,0);
+			font-family: Consolas;
+			font-size:22px;
+			padding: 0px;
+			margin: 0px;
+		}
+		
+	#table 
+	{
+		width: 383px;
+		height: 59px;
+		background: #DCE6F2;
+		font-family: Consolas;
+		border: 1px solid #8E9CAD;
+	}
+	
+	#innertablediv
+	{
+		width: 100%;
+		text-align: center;
+		border: 1px solid #FEFFFF;
+		border-radius:3px;
+	}
+	
+	#align1, #align4
+	{
+		padding-right:14px;
+		color: #666666;
+	}
+	#align2, #align5
+	{
+		padding-right:14px;
+		color: #666666;
+	}
+	#align3, #align6
+	{
+		padding-left:14px;
+		color: #666666;
+	}
+	
+
+	
+	#numeric
+	{
+		float: left;
+		margin-right:5px;
+		font-size:11px;
+	}
+		#numeric div:nth-child(2)
+		{
+			margin-top: 5px;
+		}
+		
+		#radio
+		{
+			width: 71px;
+			height: 89px;
+			background: #DCE6F2;
+			border: 1px solid #8E9CAD;
+			padding: 0;
+			border-radius:3px;
+		}
+			#rad
+			{
+				margin: 5px 0 5px 4px;
+			}
+		
+				#rad p 
+				{
+					margin: 2px 0 0 0;
+					padding:0;
+				}
+				
+					input[type="radio"]
+					{
+						color: blue;
+					}
+		
+		div > button
+		{
+			float: left;
+			width:34px;
+			height:27px;
+			margin-right:5px;
+			text-align:center;
+			font-size:11px;
+			font-family: Segoe UI;
+			padding: 0px;
+			border: 1px solid #8797AA;
+			border-radius:3px;
+		}
+		
+		div > button:hover
+		{
+			background-image: linear-gradient(bottom, rgb(255,209,109) 17%, rgb(255,244,233) 65%);
+			background-image: -o-linear-gradient(bottom, rgb(255,209,109) 17%, rgb(255,244,233) 65%);
+			background-image: -moz-linear-gradient(bottom, rgb(255,209,109) 17%, rgb(255,244,233) 65%);
+			background-image: -webkit-linear-gradient(bottom, rgb(255,209,109) 17%, rgb(255,244,233) 65%);
+			background-image: -ms-linear-gradient(bottom, rgb(255,209,109) 17%, rgb(255,244,233) 65%);
+			
+			background-image: -webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0.17, rgb(255,209,109)),
+				color-stop(0.65, rgb(255,244,233))
+			);
+		}
+		button:hover[class="margnotact"], button:hover[class="notact"]
+		{
+			background: #D9E4F1;
+		}
+		
+		div button:active
+		{
+			border: 1px solid #c29b28;
+			background: #f4cd89;
+		}
+		
+		button:active[class="margnotact"], button:active[class="notact"]
+		{
+			background: #D9E4F1;
+			border: 1px solid #8797AA;
+		}
+		
+		
+			#equal
+			{
+				float:right;
+				width:34px;
+				height:59px;
+				margin-right:11px;
+				font-size: 18px;
+				font-weight:bold;
+			}
+			
+			#zero
+			{
+				height:27px;
+				width:73px;
+				font-size: 14px;
+			}
+			
+			#arrow
+			{
+				font-size: 19px;
+			}
+			
+	.table
+	{
+		display: table;
+	}
+		.row
+		{
+			display: table-row;
+		}
+			.cell
+			{
+				display: table-cell;
+			}
+	
+	.marg
+	{
+		margin-top:5px;
+	}
+	
+	.margbord
+	{
+		background-image: linear-gradient(bottom, rgb(215,226,239) 33%, rgb(246,250,254) 100%);
+		background-image: -o-linear-gradient(bottom, rgb(215,226,239) 33%, rgb(246,250,254) 100%);
+		background-image: -moz-linear-gradient(bottom, rgb(215,226,239) 33%, rgb(246,250,254) 100%);
+		background-image: -webkit-linear-gradient(bottom, rgb(215,226,239) 33%, rgb(246,250,254) 100%);
+		background-image: -ms-linear-gradient(bottom, rgb(215,226,239) 33%, rgb(246,250,254) 100%);
+		
+		background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0.33, rgb(215,226,239)),
+			color-stop(1, rgb(246,250,254))
+		);
+		box-shadow: inset 0 0 0 1px white;
+		margin-top:5px;
+	}
+	
+	.margnum
+	{
+		background-image: linear-gradient(bottom, rgb(244,252,255) 100%, rgb(247,251,255) 0%);
+		background-image: -o-linear-gradient(bottom, rgb(244,252,255) 100%, rgb(247,251,255) 0%);
+		background-image: -moz-linear-gradient(bottom, rgb(244,252,255) 100%, rgb(247,251,255) 0%);
+		background-image: -webkit-linear-gradient(bottom, rgb(244,252,255) 100%, rgb(247,251,255) 0%);
+		background-image: -ms-linear-gradient(bottom, rgb(244,252,255) 100%, rgb(247,251,255) 0%);
+		
+		background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(1, rgb(244,252,255)),
+			color-stop(0, rgb(247,251,255))
+		);
+		margin-top:5px;
+	}
+	
+	.margnotact
+	{
+		margin-top:5px;
+		background: #D9E4F1;
+	}
+	
+	.notact
+	{
+		background: #D9E4F1;
+	}
+	
+	.bordbgr
+	{
+		background: #D5E0EE;
+		box-shadow: inset 0 0 0 1px white;
+	}
