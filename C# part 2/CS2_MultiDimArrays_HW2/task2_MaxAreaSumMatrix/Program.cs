@@ -9,6 +9,7 @@ namespace task2_MaxAreaSumMatrix
         static void Main(string[] args)
         {
             //Write a program that reads a rectangular matrix of size N x M and finds in it the square 3 x 3 that has maximal sum of its elements.
+            Console.WriteLine("Enter test in BGcoder style: (check for sample test under my code)");
             int row = 0,
                 col = 0;
             row = int.Parse(Console.ReadLine());
@@ -56,17 +57,8 @@ namespace task2_MaxAreaSumMatrix
         }
     }
 }
-//taka izglejda matricata koiato vuvejdame s dolnia test
-//  dim 6x5
-//  0    1    2    3    4
-//  1    2    3    4    5
-//  2    3    4    5    6
-//  3    4    5    6    7
-//  4    5    6    7    8
-//  5    6    7    8    9
 
-/*
-    test
+/*test*
     6
     5
     0
@@ -100,3 +92,12 @@ namespace task2_MaxAreaSumMatrix
     8
     9
 */
+
+//taka izglejda matricata koiato vuvejdame s gornia test
+//  dim 6x5
+//  0    1    2    3    4
+//  1    2    3    4    5
+//  2    3    4    5    6
+//  3    4    5    6    7
+//  4    5    6    7    8
+//  5    6    7    8    9

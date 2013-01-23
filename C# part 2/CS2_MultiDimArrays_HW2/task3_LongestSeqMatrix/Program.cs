@@ -12,6 +12,7 @@ namespace task3_LongestSeqMatrix
         static int maxCol;
         static void Main(string[] args)
         {
+            Console.WriteLine("Enter test in BGcoder style: (check for sample test under my code)");
             maxRow = 0;
             maxCol = 0;
             maxRow = int.Parse(Console.ReadLine());
@@ -26,7 +27,7 @@ namespace task3_LongestSeqMatrix
                     matrix[i, j] = Console.ReadLine();
                 }
             }
-            
+
             int currentLen = 0;
             int maxLen = 0;
             for (int i = 0; i < maxRow; i++)
@@ -39,19 +40,20 @@ namespace task3_LongestSeqMatrix
                         maxLen = currentLen;
                         element = matrix[i, j];
                     }
-                }    
+                }
             }
-            Console.WriteLine("len {0}, elem {1}",maxLen,element);
-            //Print(matrix,row,col);
+            PrintMatrix(matrix, maxRow, maxCol);
+            Console.WriteLine();
+            PrintSeq(element, maxLen);
         }
 
         static int CheckForSeq(int i, int j)
         {
             int currentMax = 0;
-            int maxSeq=0;
+            int maxSeq = 0;
             int row = i;
             int col = j;
-            
+
             while (matrix[i, j] == matrix[row, col])
             {
                 row++;
@@ -63,7 +65,7 @@ namespace task3_LongestSeqMatrix
             }
             if (currentMax > maxSeq)
             {
-                maxSeq = currentMax;;
+                maxSeq = currentMax; ;
             }
             currentMax = 0;
             row = i;
@@ -101,33 +103,50 @@ namespace task3_LongestSeqMatrix
             return maxSeq;
         }
 
-        static void Print(string[,] matrix, int row,int col)
+        static void PrintMatrix(string[,] matrix, int row, int col)
         {
             for (int i = 0; i < row; i++)
             {
                 Console.WriteLine();
                 for (int j = 0; j < col; j++)
                 {
-                    Console.Write("{0,5}",matrix[i, j]);
+                    Console.Write("{0,5}", matrix[i, j]);
                 }
+            }
+            Console.WriteLine();
+        }
+
+        static void PrintSeq(string maxSeqItem, int maxSeq)
+        {
+            Console.Write("{");
+            for (int i = 0; i < maxSeq; i++)
+            {
+                Console.Write(maxSeqItem);
+
+                if (i == maxSeq - 1)
+                {
+                    Console.Write("}");
+                    break;
+                }
+                Console.Write(", ");
             }
             Console.WriteLine();
         }
     }
 }
 /*test1         test2
-             *  3           3
-             *  4           3
-             *  ha          s
-             *  fifi        qq 
-             *  ho          s
-             *  hi          pp
-             *  fo          pp 
-             *  ha          s
-             *  hi          pp
-             *  xx          qq
-             *  xxx         s
-             *  ho
-             *  ha
-             *  xx
-             */
+ *  3           3
+ *  4           3
+ *  haaa        ss
+ *  fifi        qq 
+ *  hooo        ss
+ *  hiii        pp
+ *  fooo        pp 
+ *  haaa        ss
+ *  hiii        pp
+ *  xxyy        qq
+ *  xxxx        ss
+ *  hooo
+ *  haaa
+ *  xxyy
+ */

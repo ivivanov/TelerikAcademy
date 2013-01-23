@@ -99,6 +99,24 @@ namespace task6_ClassMatrix
             return builder.ToString();
         }
 
+        public void Duplicate(Matrix matr)
+        {
+            if ((this.GetCols != matr.GetCols) || (this.GetRows != matr.GetRows))
+            {
+                throw new FormatException("Matricses are not with same dimensions");
+            }
+            else
+            {
+                for (int i = 0; i < matr.GetRows; i++)
+                {
+                    for (int j = 0; j < matr.GetCols; j++)
+                    {
+                        matr[i, j] = this.matrix[i, j];
+                    }
+                }
+            }
+        }
+
         //Operators overloading
 
         public static Matrix operator +(Matrix leftMatrix, Matrix rightMatrix)

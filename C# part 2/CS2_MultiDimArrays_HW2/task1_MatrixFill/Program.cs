@@ -8,7 +8,7 @@ namespace task1_MatrixFill
         static int n;
         static void Main(string[] args)
         {
-            n = 5;
+            n = int.Parse(Console.ReadLine());
             matrix = new int[n, n];
 
             FillMatrixTypeA(n);
