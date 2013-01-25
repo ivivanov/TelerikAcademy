@@ -8,8 +8,10 @@ namespace task7_NumeralSystemConverter
         static void Main(string[] args)
         {
             //Write a program to convert from any numeral system of given base s to any other numeral system of base d (2 ≤ s, d ≤  16).
-
-            Console.WriteLine(NumeralSystemConverter("1007", 8, 16));
+            string number = Console.ReadLine();
+            int numberBase = int.Parse(Console.ReadLine());
+            int toBase = int.Parse(Console.ReadLine());
+            Console.WriteLine(NumeralSystemConverter(number, numberBase, toBase));
         }
         static string NumeralSystemConverter(string numStr, int numBase, int toBase)
         {
