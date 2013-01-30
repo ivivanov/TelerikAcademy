@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task18_MaxIncrSubset", "tas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task19_Permutations", "task19_Permutations\task19_Permutations.csproj", "{B4889D8E-D4F7-4B4B-B22B-8A472BF1AF42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task20_Variations", "task20_Variations\task20_Variations.csproj", "{D75987BC-FBB1-4603-89D2-793DFAC48602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task21_Combinations", "task21_Combinations\task21_Combinations.csproj", "{E3F20C86-5130-49FA-916F-6CA3B042ECBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +119,14 @@ Global
 		{B4889D8E-D4F7-4B4B-B22B-8A472BF1AF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4889D8E-D4F7-4B4B-B22B-8A472BF1AF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4889D8E-D4F7-4B4B-B22B-8A472BF1AF42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D75987BC-FBB1-4603-89D2-793DFAC48602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75987BC-FBB1-4603-89D2-793DFAC48602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75987BC-FBB1-4603-89D2-793DFAC48602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75987BC-FBB1-4603-89D2-793DFAC48602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3F20C86-5130-49FA-916F-6CA3B042ECBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3F20C86-5130-49FA-916F-6CA3B042ECBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3F20C86-5130-49FA-916F-6CA3B042ECBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F20C86-5130-49FA-916F-6CA3B042ECBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
