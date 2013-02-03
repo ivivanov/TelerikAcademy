@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("task2_ReadNumber")]
+[assembly: AssemblyTitle("task6_StringOfNumsSum")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("task2_ReadNumber")]
+[assembly: AssemblyProduct("task6_StringOfNumsSum")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bb6a714f-806a-47c6-9ab3-8f9f58a8112a")]
+[assembly: Guid("0f285834-4bae-46d3-9bb9-9b376f075541")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("task4_DownloadFile")]
+[assembly: AssemblyTitle("task7_SoutingYardAndPolishNotation")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("task4_DownloadFile")]
+[assembly: AssemblyProduct("task7_SoutingYardAndPolishNotation")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7ea2aa58-f6e3-4c2e-bb53-f597971ceb6a")]
+[assembly: Guid("a3938819-d840-4d2f-a74b-fd7697197bcb")]
 
 // Version information for an assembly consists of the following four values:
 //

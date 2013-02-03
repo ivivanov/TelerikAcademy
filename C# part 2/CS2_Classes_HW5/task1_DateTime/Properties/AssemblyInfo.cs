@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("task1_intParse")]
+[assembly: AssemblyTitle("task1_DateTime")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("task1_intParse")]
+[assembly: AssemblyProduct("task1_DateTime")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c7cebaee-d6a3-4697-a59c-17dd5750a015")]
+[assembly: Guid("282b6e2d-6a8c-4f42-ab8b-9cce90d220eb")]
 
 // Version information for an assembly consists of the following four values:
 //
