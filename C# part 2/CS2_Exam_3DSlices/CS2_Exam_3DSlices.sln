@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task4_3DSlices", "task4_3DSlices\task4_3DSlices.csproj", "{78D6CE9F-82A6-4630-866B-C82F32EC7903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task2_MessagesInBottle", "task2_MessagesInBottle\task2_MessagesInBottle.csproj", "{E6F03D01-0709-43C3-A26F-6B4C6CF9FAC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task1_BasicLanguage", "task1_BasicLanguage\task1_BasicLanguage.csproj", "{965D5CF9-72A6-467F-8660-2BE81D0DE0F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78D6CE9F-82A6-4630-866B-C82F32EC7903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D6CE9F-82A6-4630-866B-C82F32EC7903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D6CE9F-82A6-4630-866B-C82F32EC7903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D6CE9F-82A6-4630-866B-C82F32EC7903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6F03D01-0709-43C3-A26F-6B4C6CF9FAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6F03D01-0709-43C3-A26F-6B4C6CF9FAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6F03D01-0709-43C3-A26F-6B4C6CF9FAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6F03D01-0709-43C3-A26F-6B4C6CF9FAC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{965D5CF9-72A6-467F-8660-2BE81D0DE0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{965D5CF9-72A6-467F-8660-2BE81D0DE0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{965D5CF9-72A6-467F-8660-2BE81D0DE0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{965D5CF9-72A6-467F-8660-2BE81D0DE0F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
