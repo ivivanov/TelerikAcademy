@@ -1,0 +1,47 @@
+body {
+  background-color: #F1F1F1;
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-variant: normal; }
+  body h2 {
+    font-size: 16px; }
+  body div#main {
+    padding: 8px; }
+  body div#left, body div#center, body div#right {
+    float: left; }
+  body div#left h2:before {
+    content: url("../Images/icon-home.png"); }
+  body div#left ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 0 0 0; }
+  body div#left li:first-child {
+    color: #961917;
+    font-weight: bold; }
+  body div#center {
+    background-color: white;
+    border: 1px solid #C4C4C4;
+    padding: 8px; }
+    body div#center h2 {
+      background-color: #808080;
+      color: white; }
+    body div#center ul li {
+      display: inline-block; }
+      body div#center ul li input:before {
+        content: url("../Images/icon-home.png"); }
+  body div#right {
+    text-align: center;
+    border: 1px solid #C4C4C4; }
+    body div#right div {
+      text-align: center;
+      width: 150px;
+      color: #961917;
+      text-decoration: underline;
+      padding: 5px; }
+    body div#right input[type="text"] {
+      width: 90px; }
+    body div#right h2 {
+      background-color: #808080;
+      color: white; }
+

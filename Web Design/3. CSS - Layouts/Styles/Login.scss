@@ -1,0 +1,87 @@
+@mixin gradient
+{
+background-image: linear-gradient(bottom, rgb(59,59,59) 14%, rgb(37,37,37) 7%);
+background-image: -o-linear-gradient(bottom, rgb(59,59,59) 14%, rgb(37,37,37) 7%);
+background-image: -moz-linear-gradient(bottom, rgb(59,59,59) 14%, rgb(37,37,37) 7%);
+background-image: -webkit-linear-gradient(bottom, rgb(59,59,59) 14%, rgb(37,37,37) 7%);
+background-image: -ms-linear-gradient(bottom, rgb(59,59,59) 14%, rgb(37,37,37) 7%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.14, rgb(59,59,59)),
+	color-stop(0.07, rgb(37,37,37))
+);
+}
+@mixin border
+{
+	border:	1px solid black;
+}
+$bgcolor: #3B3B3B;
+$textcolor:#A1A1A1;
+
+div#form
+{
+	width:662px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	@include gradient;
+	padding:10px 10px 10px 10px;
+	display:table;
+	div
+	{
+		display:table-cell;
+		vertical-align:middle;
+		padding-right:15px;
+		span
+		{
+			font-family: Georgia, "Times New Roman", Times, serif;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		input[type="submit"]
+		{
+			border:none;
+			width: 56px;
+			height: 28px;
+			color:white;
+			background:url('../Images/button.png');
+		}
+	}
+	span
+	{
+		color:white;
+	}
+	
+}
+div#info
+{
+	display:block;
+	width:662px;
+	background-color: $bgcolor;
+	padding:5px 10px 5px 10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	color: $textcolor;
+	span#about
+	{
+		margin:7px 0 7px 0;
+		color:#FDD51B;
+		font: 28px/68px Georgia, "Times New Roman", Times, serif;
+		font-weight: normal;
+		display:block;
+	}
+	p
+	{
+		font-family:Segoe UI;
+		font-size: 14px;
+		font-weight:none;
+		padding:0px;
+		margin:0px;
+	}
+	span#designby
+	{
+		color:white;
+	}
+}

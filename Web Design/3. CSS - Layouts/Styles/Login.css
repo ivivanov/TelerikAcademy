@@ -1,0 +1,52 @@
+div#form {
+  width: 662px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-image: linear-gradient(bottom, #3b3b3b 14%, #252525 7%);
+  background-image: -o-linear-gradient(bottom, #3b3b3b 14%, #252525 7%);
+  background-image: -moz-linear-gradient(bottom, #3b3b3b 14%, #252525 7%);
+  background-image: -webkit-linear-gradient(bottom, #3b3b3b 14%, #252525 7%);
+  background-image: -ms-linear-gradient(bottom, #3b3b3b 14%, #252525 7%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.14, #3b3b3b), color-stop(0.07, #252525));
+  padding: 10px 10px 10px 10px;
+  display: table; }
+  div#form div {
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 15px; }
+    div#form div span {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 20px;
+      font-weight: bold; }
+    div#form div input[type="submit"] {
+      border: none;
+      width: 56px;
+      height: 28px;
+      color: white;
+      background: url("../Images/button.png"); }
+  div#form span {
+    color: white; }
+
+div#info {
+  display: block;
+  width: 662px;
+  background-color: #3b3b3b;
+  padding: 5px 10px 5px 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #a1a1a1; }
+  div#info span#about {
+    margin: 7px 0 7px 0;
+    color: #FDD51B;
+    font: 28px/68px Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    display: block; }
+  div#info p {
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: none;
+    padding: 0px;
+    margin: 0px; }
+  div#info span#designby {
+    color: white; }
+

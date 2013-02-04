@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Laptop Shop - Task 5</title>
+    <meta charset="UTF-8">
+    <link href="Styles/laptop%20shop.css" rel="stylesheet" />
+    <script>
+        function changeValue(type) {
+            var newValue = document.getElementById(type).value;
+            var divId = document.getElementById(type + "Number");
+            divId.innerText = newValue;
+        }
+    </script>
+</head>
+<body>
+   
+    <div id="brands">
+        <span>Apple</span>
+        <span>Sony</span>
+        <span>Samsung</span>
+        <span>Dell</span>
+        <span>Acer</span>
+    </div>
+    <div class="table">
+        <div class="tr">
+            <div class="td">
+                <div class="table">
+                    <div class="tr">
+                        <div class="td">
+                            <fieldset>
+                                <legend>Apple pro1</legend>
+                                <div class="container">
+                                    <div class="pic">
+                                        <img src="Images/mac.jpg" class="imgsize" />
+                                        <div class="divtext">1300 USD</div>
+                                    </div>
+                                    <div class="spec">
+                                        <div class="divtext">64 GB SSD</div>
+                                        <div class="divtext">2 GB DDR</div>
+                                        <div>Intel Core i5</div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="td">
+                            <fieldset>
+                                <legend>MacBook</legend>
+                                <div class="container">
+                                    <div class="pic">
+                                        <img src="Images/mac.jpg" class="imgsize" />
+                                        <div class="divtext">1300 USD</div>
+                                    </div>
+                                    <div class="spec">
+                                        <div class="divtext">64 GB SSD</div>
+                                        <div class="divtext">2 GB DDR</div>
+                                        <div>Intel Core i5</div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="tr">
+                        <div class="td">
+                            <fieldset>
+                                <legend>ProBook</legend>
+                                <div class="container">
+                                    <div class="pic">
+                                        <img src="Images/mac.jpg" class="imgsize" />
+                                        <div class="divtext">1300 USD</div>
+                                    </div>
+                                    <div class="spec">
+                                        <div class="divtext">64 GB SSD</div>
+                                        <div class="divtext">2 GB DDR</div>
+                                        <div>Intel Core i5</div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="td">
+                            <fieldset>
+                                <legend>Apple air</legend>
+                                <div class="container">
+                                    <div class="pic">
+                                        <img src="Images/mac.jpg" class="imgsize" />
+                                        <div class="divtext">1300 USD</div>
+                                    </div>
+                                    <div class="spec">
+                                        <div class="divtext">64 GB SSD</div>
+                                        <div class="divtext">2 GB DDR</div>
+                                        <div>Intel Core i5</div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="tr">
+                        <div class="td">
+                            <fieldset>
+                                <legend>Air pro</legend>
+                                <div class="container">
+                                    <div class="pic">
+                                        <img src="Images/mac.jpg" class="imgsize" />
+                                        <div class="divtext">1300 USD</div>
+                                    </div>
+                                    <div class="spec">
+                                        <div class="divtext">64 GB SSD</div>
+                                        <div class="divtext">2 GB DDR</div>
+                                        <div>Intel Core i5</div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="td">
+                            <fieldset>
+                                <legend>Mac mega pro</legend>
+                                <div class="container">
+                                    <div class="pic">
+                                        <img src="Images/mac.jpg" class="imgsize" />
+                                        <div class="divtext">1300 USD</div>
+                                    </div>
+                                    <div class="spec">
+                                        <div class="divtext">64 GB SSD</div>
+                                        <div class="divtext">2 GB DDR</div>
+                                        <div>Intel Core i5</div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sliders">
+                <div class="divtext">
+                    <span>Min price: </span>
+                    <span id="minPriceNumber">500</span>
+                    <span>USD</span>
+                </div>
+                <div class="divtext">
+                    <input id="minPrice" type="range" min="0" max="10000" value="500" onchange="changeValue('minPrice')" />
+                </div>
+                <div class="divtext">
+                    <span>Max price: </span>
+                    <span id="maxPriceNumber">1500</span>
+                    <span>USD</span>
+                </div>
+                <div class="divtext">
+                    <input id="maxPrice" type="range" min="250" max="10000" value="1500" onchange="changeValue('maxPrice')" />
+                </div>
+                <div class="divtext">
+                    <span>Min RAM: </span>
+                    <span id="minRAMNumber">4</span>
+                    <span>GB</span>
+                </div>
+                <div class="divtext">
+                    <input id="minRAM" type="range" min="0" max="24" value="4" onchange="changeValue('minRAM')" />
+                </div>
+                <div class="divtext">
+                    <span>Max RAM: </span>
+                    <span id="maxRAMNumber">16</span>
+                    <span>GB</span>
+                </div>
+                <div class="divtext">
+                    <input id="maxRAM" type="range" min="0" max="24" value="16" onchange="changeValue('maxRAM')" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
