@@ -1,0 +1,36 @@
+body
+{
+	ul li
+	{
+		list-style:none;
+		display:inline;
+
+		input[type="radio"]
+		{
+			display:none;
+			& + img
+			{
+				display:none;
+				margin-top:20px;
+				position:absolute;
+			}
+		}
+		
+		input:checked + img
+		{
+			display:block;
+		}
+
+		label img
+		{ 
+			width:10%;
+			height:10%;
+			cursor:pointer;
+			margin-right:10px;
+			&:hover
+			{
+				opacity:0.5;
+			}
+		}
+	}
+}
