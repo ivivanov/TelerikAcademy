@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  color: black; }
+
+#wrapper {
+  width: 1024px;
+  padding: 15px 0 0 15px; }
+
+#popup-box {
+  width: 110px;
+  position: relative; }
+
+.popup-item {
+  position: relative;
+  border-top: 1px solid black;
+  padding: 5px 5px 7px 5px; }
+  .popup-item:last-child {
+    border-bottom: 1px solid black; }
+  .popup-item > a img {
+    width: 25px;
+    height: 25px; }
+
+.current {
+  font-weight: bold; }
+
+.invisible {
+  display: none; }
+
+.popup-content {
+  position: absolute;
+  left: 120px;
+  top: 0px; }
+  .popup-content a {
+    position: absolute;
+    left: 176px;
+    top: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0 5px 0 5px; }
+    .popup-content a:hover {
+      text-decoration: underline; }
+  .popup-content fieldset {
+    border: 1px solid black;
+    padding: 15px; }
+    .popup-content fieldset legend {
+      font-size: 1.2em;
+      font-weight: bold;
+      padding: 0 2px 0 2px; }
+    .popup-content fieldset button {
+      border: 0;
+      border-radius: 15px;
+      background: #cacaca;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #cacaca 1%, #686868 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #cacaca), color-stop(100%, #686868));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #cacaca 1%, #686868 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #cacaca 1%, #686868 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #cacaca 1%, #686868 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, #cacaca 1%, #686868 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cacaca', endColorstr='#686868',GradientType=0 );
+      /* IE6-9 */
+      padding: 5px 10px 5px 10px; }
+      .popup-content fieldset button:hover {
+        background: #cccccc;
+        cursor: pointer; }
+

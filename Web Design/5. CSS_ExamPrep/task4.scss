@@ -1,0 +1,107 @@
+*
+{
+	margin:0;
+	padding:0;
+}
+@mixin gradient
+{
+background: #b77a60; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #b77a60 0%, #b77a60 34%, #f9b981 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#b77a60), color-stop(34%,#b77a60), color-stop(100%,#f9b981)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #b77a60 0%,#b77a60 34%,#f9b981 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #b77a60 0%,#b77a60 34%,#f9b981 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #b77a60 0%,#b77a60 34%,#f9b981 100%); /* IE10+ */
+background: linear-gradient(135deg,  #b77a60 0%,#b77a60 34%,#f9b981 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b77a60', endColorstr='#f9b981',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+body
+{
+	.wrapper
+	{
+		border-top:1px solid gray;
+		width:575px;
+		padding:0 10px 0 10px;
+	}
+	div.wrapper > header
+	{
+		background-color:#ffa757;
+		height:60px;
+		border-bottom:2px dotted #2f7786;
+		nav ul
+		{
+			list-style:none;
+			float:left;
+			li
+			{
+				display:inline-block;
+				background-color:#2f7786;
+				border-bottom-right-radius:20px;
+				font-size:21px;
+				color: white;
+				padding:8px 20px 8px 20px;
+			}
+		}
+		h1
+		{
+			color:#2f7786;
+			font-size:2em;
+			display:inline-block;
+			float:right;
+			margin-right:60px;
+		}
+	}
+	div.wrapper > section
+	{
+		width:400px;
+		height:354px;
+		background-color:#eeeeee;
+		float:left;
+		article
+		{
+			margin:15px 10px 0 10px;
+			header
+			{
+				margin:0 5px 0 5px;
+				background-color:#fc7b66;
+				border-radius:15px;
+				color:white;
+				padding:5px 0 5px 20px;
+			}
+			section
+			{
+				font-family: Consolas;
+				font-size:14px;
+			}
+			footer
+			{
+				text-align:right;
+				.date
+				{
+					color:gray;
+					font-size:12px;
+				}
+			}
+		}
+	}
+	aside
+	{
+		float:left;
+		width:165px;
+		padding:5px;
+		div
+		{
+			border:2px solid #555555;
+			box-shadow: 0px 0px 0px 2px #fff inset;
+			margin-top:5px;
+			border-radius:5px;
+			@include gradient;
+			color: white;
+			padding:5px 5px 45px 5px;
+			&:first-child
+			{
+				margin:0;
+			}
+		}
+	}
+}

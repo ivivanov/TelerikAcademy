@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial; }
+
+a {
+  color: black; }
+
+body div#wrapper {
+  width: 960px;
+  height: 200px;
+  background: #002d44;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #002d44 0%, #77d1ff 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #002d44), color-stop(100%, #77d1ff));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #002d44 0%, #77d1ff 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #002d44 0%, #77d1ff 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #002d44 0%, #77d1ff 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #002d44 0%, #77d1ff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002d44', endColorstr='#77d1ff',GradientType=0 );
+  /* IE6-9 */
+  font-size: 2em; }
+  body div#wrapper a {
+    text-decoration: none; }
+  body div#wrapper header ul {
+    padding: 50px 0 0 50px;
+    position: relative; }
+    body div#wrapper header ul li {
+      border-radius: 15px;
+      display: inline-block;
+      padding: 5px 10px 5px 10px; }
+      body div#wrapper header ul li:hover {
+        background-color: rgba(12, 12, 12, 0.1);
+        border-radius: 15px; }
+      body div#wrapper header ul li ul {
+        display: none; }
+      body div#wrapper header ul li.selected {
+        background-color: rgba(28, 71, 92, 0.5); }
+        body div#wrapper header ul li.selected ul {
+          position: absolute;
+          display: block;
+          left: 0;
+          padding: 0 0 0 50px; }
+          body div#wrapper header ul li.selected ul li {
+            position: relative; }
+            body div#wrapper header ul li.selected ul li ul {
+              display: none; }
+            body div#wrapper header ul li.selected ul li:hover {
+              background-color: rgba(17, 92, 130, 0.5); }
+              body div#wrapper header ul li.selected ul li:hover ul {
+                position: absolute;
+                display: block;
+                padding: 15px 25px 15px 25px;
+                border-radius: 15px;
+                background: #ffffff;
+                /* Old browsers */
+                background: -moz-linear-gradient(top, white 0%, #77d1ff 100%);
+                /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #77d1ff));
+                /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top, white 0%, #77d1ff 100%);
+                /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top, white 0%, #77d1ff 100%);
+                /* Opera 11.10+ */
+                background: -ms-linear-gradient(top, white 0%, #77d1ff 100%);
+                /* IE10+ */
+                background: linear-gradient(to bottom, white 0%, #77d1ff 100%);
+                /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#77d1ff',GradientType=0 );
+                /* IE6-9 */ }
+                body div#wrapper header ul li.selected ul li:hover ul li {
+                  width: 320px;
+                  display: block;
+                  border: 0;
+                  border-bottom: 1px solid black;
+                  border-radius: 0;
+                  padding: 5px;
+                  margin: 0;
+                  text-align: center; }
+                  body div#wrapper header ul li.selected ul li:hover ul li:last-child {
+                    border: 0; }
+                  body div#wrapper header ul li.selected ul li:hover ul li:hover {
+                    background-color: rgba(60, 126, 159, 0.5);
+                    border-radius: 15px;
+                    border-bottom: 1px solid black; }
+                  body div#wrapper header ul li.selected ul li:hover ul li a {
+                    padding: 0;
+                    margin: 0; }
+

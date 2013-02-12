@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>CSS Exam Practice - task 6</title>
+        <link href="task6.css" rel="stylesheet" />
+        <script src="jquery-1.9.0.js"></script>
+        <script>
+            $(function onDocumentReady() {
+                $(" ul > li").on("click", function onNavItemClick(e) {
+                    if (!$(this).parent().hasClass("selected")) {
+                        $("ul li.selected").removeClass("selected");
+                        $(this).addClass("selected");
+                    }
+
+                    if (e.preventDefaults) {
+                        e.preventDefaults();
+                    }
+                    return false;
+                });
+            });
+	</script>
+    </head>
+    <body>
+
+        <div id='cssmenu'>
+            <ul>
+                <li class="selected">
+                    <a href='#'>Home</a>
+                </li>
+                <li>
+                    <a href='#'>Products</a>
+                    <ul>
+                        <li>
+                            <a href='#'>CSS3 Generator</a>
+                        </li>
+                        <li>
+                            <a href='#'>Color Picker</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href='#'>About</a>
+                    <ul>
+                        <li>
+                            <a href='#'>About Us</a>
+                        </li>
+                        <li>
+                            <a href='#'>About Our Work</a>
+                        </li>
+                        <li>
+                            <a href='#'>About Whatever</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href='#'>Contact</a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
