@@ -13,8 +13,8 @@ namespace MatrixClass
             Console.SetIn(new StreamReader(@"../../matrix.txt"));          
             #endif     
             int n = int.Parse(Console.ReadLine());
-            Matrix<decimal> matr = new Matrix<decimal>(n, n);
-            matr.FillMatrix<decimal>();
+            decimal[,] matrics = FillMatrix<decimal>(n, n);
+            Matrix<decimal> matr = new Matrix<decimal>(n, n, matrics);
             Matrix<decimal> matr2 = matr;
             //////////////////////PRINT/////////////////////////
             Console.WriteLine(new string('-', 80));
@@ -55,7 +55,21 @@ namespace MatrixClass
                 Console.WriteLine("Matrix contain zero elements!");
             }
 
+        }
 
+        static T[,] FillMatrix<T>(int rows, int cols) where T : IComparable
+        {
+            T[,] matrix = new T[rows, cols];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    //dynamic input = (T)Enum.Parse(typeof(T), Console.ReadLine(),true);
+                    dynamic input = (T)Convert.ChangeType(Console.ReadLine(), typeof(T));
+                    matrix[i, j] = input;
+                }
+            }
+            return matrix;
         }
     }
 }

@@ -14,13 +14,13 @@ namespace Attributes
 
               type.GetCustomAttributes(false);
 
-            foreach (Version attr in allAttributes)
+            foreach (VersionAttribute attr in allAttributes)
             {
-                Console.WriteLine("{0}: {1}", attr, attr.Ver);
+                Console.WriteLine("{0}: {1}", attr, attr.Version);
             }
         }
     }
-    [Version(5.5)]
+    [VersionAttribute(5.5)]
     public class Point
     {
         int x;

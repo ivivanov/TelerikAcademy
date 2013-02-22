@@ -10,7 +10,7 @@ using System.Text;
 
 namespace MatrixClass
 {
-    public class Matrix<T> where T: IConvertible, IComparable
+    public class Matrix<T> where T : struct, IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
     {
         #region Fields
 
@@ -23,17 +23,20 @@ namespace MatrixClass
         #region Constructors
 
         public Matrix()
+            : this(0, 0, new T[0, 0])
         {
-            rows = 0;
-            cols = 0;
-            matrix = new T[0, 0];
         }
 
         public Matrix(int rows, int cols)
+            : this(rows, cols, new T[rows, cols])
+        {
+        }
+
+        public Matrix(int rows, int cols, T[,] matr)
         {
             this.rows = rows;
             this.cols = cols;
-            this.matrix = new T[rows, cols];
+            this.matrix = matr;
         }
 
         #endregion
@@ -75,19 +78,6 @@ namespace MatrixClass
         #endregion
 
         #region Methods
-
-        public void FillMatrix<T>() where T :IComparable
-        {
-            for (int i = 0; i < GetRows; i++)
-            {
-                for (int j = 0; j < GetCols; j++)
-                {
-                    //dynamic input = (T)Enum.Parse(typeof(T), Console.ReadLine(),true);
-                    dynamic input = (T)Convert.ChangeType(Console.ReadLine(), typeof(T));
-                    this.matrix[i, j] = input;
-                }
-            }
-        }
 
         public void Print()
         {
