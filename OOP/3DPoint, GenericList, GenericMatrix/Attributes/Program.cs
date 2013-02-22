@@ -7,6 +7,17 @@ namespace Attributes
     {
         static void Main(string[] args)
         {
+            Point xy = new Point();
+            Type type = typeof(Point);
+
+            object[] allAttributes =
+
+              type.GetCustomAttributes(false);
+
+            foreach (Version attr in allAttributes)
+            {
+                Console.WriteLine("{0}: {1}", attr, attr.Ver);
+            }
         }
     }
     [Version(5.5)]
