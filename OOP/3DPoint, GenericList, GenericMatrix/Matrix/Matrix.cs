@@ -1,8 +1,8 @@
 ﻿/*
- * Define a class Matrix<T> to hold a matrix of numbers (e.g. integers, floats, decimals). 
- * Implement an indexer this[row, col] to access the inner matrix cells.
- * Implement the operators + and - (addition and subtraction of matrices of the same size) and * for matrix multiplication. 
- * Throw an exception when the operation cannot be performed. Implement the true operator (check for non-zero elements).
+* Define a class Matrix<T> to hold a matrix of numbers (e.g. integers, floats, decimals). 
+* Implement an indexer this[row, col] to access the inner matrix cells.
+* Implement the operators + and - (addition and subtraction of matrices of the same size) and * for matrix multiplication. 
+* Throw an exception when the operation cannot be performed. Implement the true operator (check for non-zero elements).
 */
 
 using System;
@@ -10,39 +10,37 @@ using System.Text;
 
 namespace MatrixClass
 {
-    public class Matrix<T> where T : struct, IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+    public class Matrix<T> where T : IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>, new()
     {
         #region Fields
-
+        
         private readonly int rows;
         private readonly int cols;
         private T[,] matrix;
-
+        
         #endregion
-
+        
         #region Constructors
-
-        public Matrix()
-            : this(0, 0, new T[0, 0])
+        
+        public Matrix() : this(0, 0, new T[0, 0])
         {
         }
-
-        public Matrix(int rows, int cols)
-            : this(rows, cols, new T[rows, cols])
+        
+        public Matrix(int rows, int cols) : this(rows, cols, new T[rows, cols])
         {
         }
-
+        
         public Matrix(int rows, int cols, T[,] matr)
         {
             this.rows = rows;
             this.cols = cols;
             this.matrix = matr;
         }
-
+        
         #endregion
-
+        
         #region Properties
-
+        
         public int GetRows
         {
             get
@@ -50,7 +48,7 @@ namespace MatrixClass
                 return this.rows;
             }
         }
-
+        
         public int GetCols
         {
             get
@@ -58,7 +56,7 @@ namespace MatrixClass
                 return this.cols;
             }
         }
-
+        
         public T this[int i, int j]
         {
             get
@@ -74,11 +72,11 @@ namespace MatrixClass
                 matrix[i, j] = value;
             }
         }
-
+        
         #endregion
-
+        
         #region Methods
-
+        
         public void Print()
         {
             Console.WriteLine(new string('-', 20));
@@ -92,11 +90,11 @@ namespace MatrixClass
             }
             Console.WriteLine();
         }
-
+        
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-
+            
             for (int i = 0; i < this.GetRows; i++)
             {
                 builder.Append('\n');
@@ -107,7 +105,7 @@ namespace MatrixClass
             }
             return builder.ToString();
         }
-
+        
         public void Duplicate(Matrix<T> matr)
         {
             if ((this.GetCols != matr.GetCols) || (this.GetRows != matr.GetRows))
@@ -125,7 +123,7 @@ namespace MatrixClass
                 }
             }
         }
-
+        
         //Operators overloading
         public static Matrix<T> operator +(Matrix<T> leftMatrix, Matrix<T> rightMatrix)
         {
@@ -146,7 +144,7 @@ namespace MatrixClass
                 return result;
             }
         }
-
+        
         public static Matrix<T> operator -(Matrix<T> leftMatrix, Matrix<T> rightMatrix)
         {
             if ((leftMatrix.GetRows != rightMatrix.GetRows) || (leftMatrix.GetCols != rightMatrix.GetCols))
@@ -166,7 +164,7 @@ namespace MatrixClass
                 return result;
             }
         }
-
+        
         public static Matrix<T> operator *(Matrix<T> leftMatrix, Matrix<T> rightMatrix)
         {
             if (leftMatrix.GetCols != rightMatrix.GetRows)
@@ -178,7 +176,7 @@ namespace MatrixClass
                 int rows = leftMatrix.GetRows;
                 int cols = rightMatrix.GetCols;
                 Matrix<T> result = new Matrix<T>(rows, cols);
-
+                
                 for (int i = 0; i < rows; i++)
                 {
                     for (int j = 0; j < cols; j++)
@@ -191,17 +189,17 @@ namespace MatrixClass
                         result.matrix[i, j] = sum;
                     }
                 }
-
+                
                 return result;
             }
         }
-
+        
         //Implement the true operator (check for non-zero elements).
         public static bool operator true(Matrix<T> matr)
         {
-            for (int i = 0; i < matr.GetCols; i++)
+            for (int i = 0; i < matr.GetRows; i++)
             {
-                for (int j = 0; j < matr.GetRows; j++)
+                for (int j = 0; j < matr.GetCols; j++)
                 {
                     //matr[i, j] == 0
                     int zero = 0;
@@ -213,16 +211,17 @@ namespace MatrixClass
             }
             return true;
         }
-
+        
         public static bool operator false(Matrix<T> matr)
         {
-            for (int i = 0; i < matr.GetCols; i++)
+            for (int i = 0; i < matr.GetRows; i++)
             {
-                for (int j = 0; j < matr.GetRows; j++)
+                for (int j = 0; j < matr.GetCols; j++)
                 {
                     //matr[i, j] == 0
                     int zero = 0;
-                    if (matr[i, j].CompareTo((T)Convert.ChangeType(zero, typeof(T))) == 0)
+                    if (matr[i, j].CompareTo(new T()) == 0)
+                    //if (matr[i, j].CompareTo(default(T)) == 0)
                     {
                         return true;
                     }
@@ -230,6 +229,7 @@ namespace MatrixClass
             }
             return false;
         }
+    
         #endregion
     }
 }
