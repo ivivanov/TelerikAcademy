@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SideshowBob", "SideshowBob\SideshowBob.csproj", "{DAF6E01B-C360-4E43-9C0A-C1FA701A6AEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SideshowBobUI", "SideshowBobUI\SideshowBobUI.csproj", "{EB110C2A-408C-49E8-B826-1131D7C27637}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://sideshowbob.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SideshowBob\\SideshowBob.csproj
+		SccProjectName1 = SideshowBob
+		SccLocalPath1 = SideshowBob
+		SccProjectUniqueName2 = SideshowBobUI\\SideshowBobUI.csproj
+		SccProjectName2 = SideshowBobUI
+		SccLocalPath2 = SideshowBobUI
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAF6E01B-C360-4E43-9C0A-C1FA701A6AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF6E01B-C360-4E43-9C0A-C1FA701A6AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF6E01B-C360-4E43-9C0A-C1FA701A6AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF6E01B-C360-4E43-9C0A-C1FA701A6AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB110C2A-408C-49E8-B826-1131D7C27637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB110C2A-408C-49E8-B826-1131D7C27637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB110C2A-408C-49E8-B826-1131D7C27637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB110C2A-408C-49E8-B826-1131D7C27637}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,67 @@
+﻿<Window x:Class="SideshowBobUI.View.Employees"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:SideshowBobUI.ViewModel"
+      Title="Employees" Height="600" Width="600">
+
+    <Grid>
+        <Grid Background="#FFE5E5E5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Content="First Name:"/>
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Content="Last Name:"/>
+            <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Content="Gender:"/>
+            <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Content="Age:"/>
+            <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Content="Monthly Salary:"/>
+
+            <TextBox  Grid.Column="1" Grid.Row="0" Margin="5" Text="{Binding Path=FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox  Grid.Column="1"    Grid.Row="1" Margin="5" Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}"/>
+            <ComboBox Grid.Column="1" Grid.Row="2" Margin="5"  ItemsSource="{Binding Path=Genders}" Text="{Binding Path=Gender, UpdateSourceTrigger=PropertyChanged}" Width="100" HorizontalAlignment="Left"/>
+            <TextBox Grid.Column="1"  Grid.Row="3" Margin="5" Text="{Binding Path=Age, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Grid.Column="1" Grid.Row="4" Margin="5"  Text="{Binding Path=Salary, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Grid Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" MinWidth="80" Height="30" Margin="3" Content="Add" Command="{Binding Path=AddCommand}"/>
+                <Button Grid.Column="1"  MinWidth="80" Height="30" Margin="3" Content="Edit" Command="{Binding Path=EditCommand}" />
+                <Button Grid.Column="2"  MinWidth="80" Height="30" Margin="3" Content="Remove" Command="{Binding Path=RemoveCommand}" />
+
+            </Grid>
+
+            <ListView Name="VehiclesList" Grid.Row="6" Grid.ColumnSpan="2" Margin="6,1,0,10" Height="190"
+                      ItemsSource="{Binding Path=ListOfEmployees}"
+                      SelectedItem="{Binding Path=SelectedEmployee}"
+                      >
+                <ListView.View>
+                    <GridView x:Name="VehiclesListGrid">
+                        <GridViewColumn Header="First Name" Width="100" DisplayMemberBinding="{Binding Path=FirstName}"  />
+                        <GridViewColumn Header="Last Name" Width="100" DisplayMemberBinding="{Binding Path=LastName}" />
+                        <GridViewColumn Header="Age" Width="100" DisplayMemberBinding="{Binding Path=Age}"/>
+                        <GridViewColumn Header="Monthly Salary" Width="100"  DisplayMemberBinding="{Binding Path=Salary}"/>
+                        <GridViewColumn Header="Is Availabe" Width="100"  DisplayMemberBinding="{Binding Path=IsBusy}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Grid.Row="7" Grid.Column="1" MinWidth="100" HorizontalAlignment="Right" Content="Change Status" Margin="5" Command="{Binding Path=ChangeStatusCommand}" />
+        </Grid>
+    </Grid>
+</Window>
+    

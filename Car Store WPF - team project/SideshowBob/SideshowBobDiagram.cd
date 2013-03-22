@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SideshowBob.AuthorisedDealer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAECAACAAwAAMICAICAQgiABEAgAkQgICJgAAAAA=</HashCode>
+      <FileName>AuthorisedDealer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SideshowBob.ConsoleApp" Collapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ConsoleApp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SideshowBob.Machine.Limosine" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAUAEAAEAAQAAAAAAAAABAAAgAQAAIAAAAA=</HashCode>
+      <FileName>Machine\Limosine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SideshowBob.Machine.Motorcycle" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAUAEAAEAAQAAAAAAAAABAAAgAQAAIAAAAA=</HashCode>
+      <FileName>Machine\Motorcycle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SideshowBob.Machine.SUV" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAUAEAAEAAQAAAAAAAAABAAAgAQAAIAAAAA=</HashCode>
+      <FileName>Machine\SUV.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SideshowBob.Machine.Truck" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAIEAEAAEAAQAAAAAAAAABAAAgAQAAIAAAAA=</HashCode>
+      <FileName>Machine\Truck.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SideshowBob.Machine.Van" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAhAAAAIUAEAAEAAQAAAAAAAAABAAAgAQAAIAAAAA=</HashCode>
+      <FileName>Machine\Van.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SideshowBob.Machine.Vehicle" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEFAAAABQAAEAAAAAAABAABCAAAAQCQAAgAkAAJAAA=</HashCode>
+      <FileName>Machine\Vehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SideshowBob.Person.Clients.Client" Collapsed="true">
+    <Position X="4.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Person\Clients\Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SideshowBob.Person.Clients.Company" Collapsed="true">
+    <Position X="3.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Person\Clients\Company.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SideshowBob.Person.Clients.Individual" Collapsed="true">
+    <Position X="7.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Person\Clients\Individual.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SideshowBob.Person.Employees.CarDealer">
+    <Position X="10.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Person\Employees\CarDealer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SideshowBob.Person.Employees.Employee" Collapsed="true">
+    <Position X="12.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Person\Employees\Employee.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SideshowBob.Person.Employees.Mechanic">
+    <Position X="14" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Person\Employees\Mechanic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SideshowBob.Person.PersonBase" Collapsed="true">
+    <Position X="8.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAABARAAAAEQAAAAAAAAAAAAAAAAACAAAAAg=</HashCode>
+      <FileName>Person\PersonBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SideshowBob.Interfaces.IDiscounter">
+    <Position X="15" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDiscounter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SideshowBob.Interfaces.IReplacable" Collapsed="true">
+    <Position X="16.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IReplacable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SideshowBob.Interfaces.IWarrantyExtendable" Collapsed="true">
+    <Position X="15" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IWarrantyExtendable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SideshowBob.Machine.Enumerations.Brand" Collapsed="true">
+    <Position X="15" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BqAEKCBRQ6wMpKyAAKwERIaEAAhgAKgWkBCgMkkQxCo=</HashCode>
+      <FileName>Machine\Enumerations\BrandModelOld.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SideshowBob.Machine.Enumerations.Category" Collapsed="true">
+    <Position X="16.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAECAAAAAAAQAAAAAAABQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Machine\Enumerations\Category.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SideshowBob.Machine.Enumerations.Model" Collapsed="true">
+    <Position X="15" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YkTMU7UESBOcnzGGxGJg2iopV0ByVHfMG1OuhThIhac=</HashCode>
+      <FileName>Machine\Enumerations\Model.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

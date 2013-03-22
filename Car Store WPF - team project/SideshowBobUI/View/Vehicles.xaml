@@ -1,0 +1,69 @@
+﻿<Window x:Class="SideshowBobUI.View.Vehicles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:SideshowBobUI.ViewModel"
+        Title="Vehicles" Height="600" Width="600">
+
+        <Grid>
+        <Grid Background="#FFE5E5E5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Content="Category:"/>
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Content="Brand and model:"/>
+            <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Content="Manufactured:"/>
+            <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Content="Price:"/>
+            <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Content="Wheels:"/>
+            <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Content="Color:" />
+            <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Content="Speed:"/>
+
+            <ComboBox Name="CategoryTB" Grid.Column="1" Grid.Row="0" Margin="5"  ItemsSource="{Binding Path=Categories}" />
+            <ComboBox Name="ModelTB" Grid.Column="1"    Grid.Row="1" Margin="5"  Text="{Binding Path=Model}" ItemsSource="{Binding Path=Models}"/>
+            <DatePicker Name="DateP" Grid.Column="1"    Grid.Row="2" Margin="5"  Text="{Binding Path=Year }" />
+            <TextBox Name="PriceTB" Grid.Column="1"     Grid.Row="3" Margin="5"  Text="{Binding Path=Price}" />
+            <TextBox Name="WheelsTB" Grid.Column="1"    Grid.Row="4" Margin="5"  Text="{Binding Path=Wheels}"/>
+            <TextBox Name="ColorTB" Grid.Column="1"     Grid.Row="5" Margin="5"  Text="{Binding Path=Color}"/>
+            <TextBox Name="SpeedTB" Grid.Column="1"     Grid.Row="6" Margin="5"  Text="{Binding Path=Speed}" />
+
+            <Grid Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" MinWidth="80" Height="30" Margin="3" Content="Add" Click="AddButtonClick" />
+                <Button Grid.Column="1"  MinWidth="80" Height="30" Margin="3" Content="Edit" />
+                <Button Grid.Column="2"  MinWidth="80" Height="30" Margin="3" Content="Remove" Command="{Binding Path=RemoveCommand}"/>
+
+            </Grid>
+
+            <ListView Name="VehiclesList" Grid.Row="8" Grid.ColumnSpan="2" Margin="3" Height="200"
+                      SelectedItem="{Binding Path=SelectedVehicle}"
+                      ItemsSource="{Binding Path=ListOfVehicles}">
+                <ListView.View>
+                    <GridView x:Name="VehiclesListGrid">
+                        <GridViewColumn Header="BrandModel" Width="100" DisplayMemberBinding="{Binding Path=Model}"  />
+                        <GridViewColumn Header="Manufactured" Width="100" DisplayMemberBinding="{Binding Path=Year.Year}" />
+                        <GridViewColumn Header="Color" Width="100" DisplayMemberBinding="{Binding Path=Color}"  />
+                        <GridViewColumn Header="Speeds" Width="100" DisplayMemberBinding="{Binding Path=Speed}" />
+                        <GridViewColumn Header="Price" Width="100" DisplayMemberBinding="{Binding Path=Price}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </Grid>
+</Window>
