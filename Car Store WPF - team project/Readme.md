@@ -4,7 +4,6 @@
 
 - stann1 (Станислав Стойчев)
 -	ivivanov (Иван Иванов)
--	rodi1i (Радослав Стоянов)
 -	SNeykov (Strahil Neykov)
 -	ekostadinov (Евгени Костадинов)
 
