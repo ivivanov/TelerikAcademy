@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 5</title>
+    <link href="../styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a program that finds the most frequent number in an array. Example:
+	{4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3}  4 (5 times)</h3>
+    <div id="js-console"></div>
+    <script src="../scripts/js-console.js"></script>
+    <script>
+        var arr = new Array(4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3);
+
+        function swap(i, j) {
+            var temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+
+        ; (function () {
+            var currElem = arr[0];
+
+
+            var length = arr.length;
+            for (var i = 0; i < length; i++) {
+                currElem = arr[i];
+                for (var j = 0; j < length; j++) {
+                    if (currElem < arr[j]) {
+                        swap(i, j);
+                        currElem = arr[j];
+                    }
+                }
+            }
+                
+            var championElement = arr[0];
+            var championSeqLen = 1;
+            var curr = arr[0];
+            var currSeqLen = 1;
+
+            for (var i = 0; i < arr.length - 1; i++) {
+                curr = arr[i];
+                if (curr == arr[i + 1]) {
+                    currSeqLen++;
+                }
+                else {
+                    if (currSeqLen > championSeqLen) {
+                        championSeqLen = currSeqLen;
+                        championElement = curr;
+                    }
+                    currSeqLen = 1;
+                }
+            }
+
+            jsConsole.write(championElement + " (" + championSeqLen + " times)");
+        }())
+    </script>
+</body>
+</html>
+

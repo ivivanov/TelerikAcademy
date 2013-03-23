@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 8</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>
+            Write an expression that calculates trapezoid's area by given sides a and b and height h.
+        </h3>
+        <label for="a">a</label>
+        <input type="text" id="a" name="a" />
+        <label for="b">b</label>
+        <input type="text" id="b" name="b" />
+        <label for="h">h</label>
+        <input type="text" id="h" name="h" />
+        <input type="button" onclick="Check()" value="Check!" />
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+        <script>
+            function Check() {
+                var a = document.getElementById("a");
+                var b = document.getElementById("b");
+                var h = document.getElementById("h");
+                var area = ((a.value + b.value) / 2) * h.value;
+                jsConsole.writeLine("S = " + area);
+            }
+        </script>
+    </body>
+</html>

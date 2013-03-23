@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 3</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a script that finds the max and min number from a sequence of numbers</h3>
+        <input type="button" onclick="minimum()" value="Min" />
+        <input type="button" onclick="maximum()" value="Max" />
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+        <script>
+            
+            var sequence = [];
+            
+            for (var i = 0; i < 10; i++) {
+                sequence[i] = Math.floor(Math.random() * 10);
+            }
+            for (var i = 0; i < sequence.length; i++) {
+                jsConsole.write(sequence[i] + " ");
+            }
+            jsConsole.writeLine("");
+
+            function minimum() {
+                var min = Number.MAX_VALUE;
+                for (var i = 0; i < sequence.length; i++) {
+                    if (min > sequence[i])
+                    {
+                        min = sequence[i];
+                    }
+                }
+                jsConsole.writeLine("Min = "+ min);
+            }
+
+            function maximum() {
+                var max = Number.MIN_VALUE;
+                for (var i = 0; i < sequence.length; i++) {
+                    if (max < sequence[i]) {
+                        max = sequence[i];
+                    }
+                }
+                jsConsole.writeLine("Min = " + max);
+            }
+        </script>
+    </body>
+</html>
+

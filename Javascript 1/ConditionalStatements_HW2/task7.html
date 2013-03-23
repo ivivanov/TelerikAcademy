@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 7</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a script that finds the greatest of given 5 variables.</h3>
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+
+        <script>
+            var arr = [4, 1, 67, 8, -3];
+            jsConsole.write("My array: ");
+            for (var i = 0; i < 5; i++) {
+                jsConsole.write(arr[i] + " ");
+            }
+            jsConsole.writeLine("");
+            jsConsole.write("The biggest number is: ");
+            var max = arr[0];
+            for (var i = 1; i < 5; i++) {
+                if (max < arr[i]) {
+                    max = arr[i];
+                }
+            }
+            jsConsole.write(max);
+        </script>
+    </body>
+</html>

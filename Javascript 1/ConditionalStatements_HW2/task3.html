@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 3</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a script that finds the biggest of three integers using nested if statements.</h3>
+        <label for="a">a</label>
+        <input type="text" id="a" name="a" />
+        <label for="b">b</label>
+        <input type="text" id="b" name="b" />
+        <label for="c">c</label>
+        <input type="text" id="c" name="c" />
+        <input type="button" onclick="Func()" value="Execute!" />
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+
+        <script>
+            function Func() {
+                var a = parseInt(document.getElementById("a").value, 10);
+                var b = parseInt(document.getElementById("b").value, 10);
+                var c = parseInt(document.getElementById("c").value, 10);
+
+                var max = a;
+
+                if (max < b)
+                {
+                    max = b;
+                }
+                if (max < c)
+                {
+                    max = c;
+                }
+
+                jsConsole.writeLine("max = " + max);
+            }
+        </script>
+    </body>
+</html>
+    

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 4</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <aside></aside>
+        <footer></footer>
+        <table></table>
+        <h3>Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects</h3>
+        <input type="button" onclick="minNmax()" value="Execute" />
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+
+        <script>
+
+            //var allDocumentElements = new Array();
+            //var allProperties = new Array(document, window, navigator);
+            //var maxElement = "AAA";
+            //var minElement = "ZZZ";
+            //for (var element in allProperties){
+            //    for (var innnerElement in element) {
+            //        if (maxElement < innnerElement)
+            //        {
+            //            maxElement = innnerElement;
+            //        }
+            //        if (minElement > innnerElement)
+            //        {
+            //            minElement = innnerElement;
+            //        }
+            //    }
+            //}
+            //jsConsole.writeLine("Max: " + maxElement);
+            //jsConsole.writeLine("Min: " + minElement);
+            
+            var allDocumentElements = document.getElementsByTagName('*');
+            document.write("All tags in this html file: ");
+            
+            for (var i = 0; i < allDocumentElements.length; i++) {
+                var string = allDocumentElements[i].tagName;
+                document.write(string + " ");
+            }
+            
+            function minNmax() {
+                minElement();
+                maxElement();
+            }
+            function minElement() {
+                var minLex = allDocumentElements[0].tagName;
+                for (var i = 1; i < allDocumentElements.length; i++) {
+                    var current = allDocumentElements[i].tagName;
+                    if (minLex > current) {
+                        minLex = current;
+                    }
+                }
+                jsConsole.writeLine("Min element is " + minLex);
+                return;
+            }
+            function maxElement() {
+                var maxLex = allDocumentElements[0].tagName;
+                for (var i = 1; i < allDocumentElements.length; i++) {
+                    var current = allDocumentElements[i].tagName;
+                    if (maxLex < current) {
+                        maxLex = current;
+                    }
+                }
+                jsConsole.writeLine("Max element is " + maxLex);
+                return;
+            }
+
+        </script>
+
+    </body>
+</html>
+

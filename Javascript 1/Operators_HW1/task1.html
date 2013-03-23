@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 1</title>
+    <link href="../styles/js-console.css" rel="stylesheet" />
+</head>
+<body>    
+    <h3>Write an expression that checks if given integer is odd or even.</h3>
+    <input type="text" id="numberInputBox" />
+    <input type="button" onclick="IsEven()" value="Check!" />
+    <div id="js-console"></div>
+	<script src="../scripts/js-console.js"></script>
+
+   <script>
+       function IsEven() {
+           var number = document.getElementById("numberInputBox");
+           if (number.value % 2 == 0) {
+               jsConsole.writeLine(number.value + " is even");
+               return;
+           }
+           jsConsole.writeLine(number.value + " is odd");
+       }
+   </script>
+</body>
+</html>

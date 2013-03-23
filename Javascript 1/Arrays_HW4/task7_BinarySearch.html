@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 7</title>
+    <link href="../styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>JS Binary Search</h3>
+    <input type="text" id="input"/>
+    <input type="button"  onclick="binSearch()" value="Search Index" />
+    <div id="js-console"></div>
+    <script src="../scripts/js-console.js"></script>
+    <script>
+        var arr = new Array(2, 2, 2, 3, 3, 4, 4, 6, 7, 8);
+        jsConsole.writeLine(arr.join(", "));
+
+        function binSearch(){
+            number = parseInt(document.getElementById("input").value, 10);
+            jsConsole.writeLine(binarySearch(number, 0, arr.length - 1));
+            jsConsole.writeLine(iterBinSearch(number));
+        }
+
+        function binarySearch(itemNeeded,begIndex, endIndex) {
+            var middle = parseInt((begIndex + endIndex) / 2, 10);
+            if (begIndex > endIndex){
+                return -1;
+            }
+            if (itemNeeded == arr[middle]) {
+                return middle;
+            }
+            if (itemNeeded > arr[middle]) {
+                return binarySearch(itemNeeded,middle + 1, endIndex);
+            }
+            if (itemNeeded < arr[middle]) {
+                return binarySearch(itemNeeded,begIndex, middle - 1);
+            }
+        }
+
+        function iterBinSearch(itemNeeded) {
+            var left = 0;
+            var right = arr.length - 1;
+
+            while (left <= right) {
+                var middle = parseInt((left + right) / 2, 10);
+
+                if (itemNeeded == arr[middle]) {
+                    return middle;
+                }
+                if (itemNeeded > arr[middle]) {
+                    left = middle + 1;
+                }
+                if (itemNeeded < arr[middle]) {
+                    right = middle - 1;
+                }
+            }
+            return -1;
+        }
+    </script>
+</body>
+</html>
+

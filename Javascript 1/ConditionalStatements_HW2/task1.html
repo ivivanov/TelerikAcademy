@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 1</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.</h3>
+        <label for="a">a</label>
+        <input type="text" id="a" name="a" />
+        <label for="b">b</label>
+        <input type="text" id="b" name="b" />
+        <input type="button" onclick="Func()" value="Execute!" />
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+
+        <script>
+            function Func() {
+                var a = parseInt(document.getElementById("a").value, 10);
+                var b = parseInt(document.getElementById("b").value, 10);
+
+                if (a > b) {
+                    a = a + b;
+                    b = a - b;
+                    a = a - b;
+                }
+                jsConsole.writeLine("a = " + a + ", b = " + b);
+            }
+        </script>
+    </body>
+</html>

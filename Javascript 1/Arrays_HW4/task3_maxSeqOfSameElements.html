@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 3</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a script that finds the maximal sequence of equal elements in an array.
+		Example: (2, 1, 1, 9, 9, 9, 9, 2, 3, 3, 2, 2, 2, 2, 2, 1);  {2, 2, 2, 2, 2}.</h3>
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+        <script>
+            ; (function () {
+                var arr = new Array(2, 1, 1, 9, 9, 9, 9, 2, 3, 3, 2, 2, 2, 2, 2, 1);
+
+                var championElement = arr[0];
+                var championSeqLen = 1;
+                var curr = arr[0];
+                var currSeqLen = 1;
+
+                for (var i = 0; i < arr.length-1; i++) {
+                    curr = arr[i];
+                    if (curr == arr[i + 1]) {
+                        currSeqLen++;
+                    }
+                    else {
+                        if (currSeqLen > championSeqLen){
+                            championSeqLen = currSeqLen;
+                            championElement = curr;
+                        }
+                        currSeqLen = 1;
+                    }
+                }
+                var result = new String();
+                result+='{';
+                for (var i = 0; i < championSeqLen-1; i++) {
+                    result+=championElement;
+                    result+=", ";
+                }
+                result += championElement;
+                result+='}';
+                jsConsole.writeLine(result);
+            }())
+        </script>
+    </body>
+</html>
+

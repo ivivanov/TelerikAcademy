@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 4</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a script that finds the maximal increasing sequence in an array.
+             Example: (3, 2, 3, 4, 2, 2, 4, 6, 8, 7)  {2, 4, 6, 8}.</h3>
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+        <script>
+            ; (function () {
+                var arr = new Array(3, 2, 3, 4, 2, 2, 4, 6, 8, 7);
+
+                var championIndex = 0;
+                var championSeqLen = 1;
+                var currElem = new Number();
+                var currSeqLen = 1;
+
+                for (var i = 0; i < arr.length-1; i++) {
+                    currElem = arr[i];
+
+                    if (currElem < arr[i + 1]) {
+                        currSeqLen++;
+                    }
+                    else {
+                        if (currSeqLen > championSeqLen){
+                            championSeqLen = currSeqLen;
+                            championIndex = i - championSeqLen + 1;
+                            currSeqLen = 1;
+                        }
+                    }
+                }
+                
+                var result = new String();
+                result += '{';
+                for (var i = championIndex; i < championSeqLen + championIndex -1; i++) {
+                    result += arr[i];
+                    result += ", ";
+                }
+                result += arr[championIndex + championSeqLen - 1];
+                result += '}';
+                jsConsole.writeLine(result);
+            }())
+        </script>
+    </body>
+</html>
+

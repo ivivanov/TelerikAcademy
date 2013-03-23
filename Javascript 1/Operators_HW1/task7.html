@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 7</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write an expression that checks if given positive integer number n (n ≤ 100) is prime. E.g. 37 is prime.</h3>
+        <label for="x">N</label>
+        <input type="text" id="x" name="x" />
+        
+        <input type="button" onclick="Check()" value="Check!" />
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+        <script>
+            function Check() {
+                var x = document.getElementById("x");
+                var n = x.value;
+                var isPrime = true;
+                if (n < 2) {
+                    isPrime = false;
+                }
+                else {
+                    for (var i = 2; i <= Math.sqrt(n) ; i++) {
+                        if ((n % i) == 0) {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+                }
+                jsConsole.writeLine(isPrime);
+            }
+        </script>
+    </body>
+</html>

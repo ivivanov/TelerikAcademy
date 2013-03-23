@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 8</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation. Examples:
+            0  "Zero"
+            273  "Two hundred seventy three"
+            400  "Four hundred"
+            501  "Five hundred and one"
+            711  "Seven hundred and eleven" </h3>
+        <label for="a">a</label>
+        <input type="text" id="a" name="a" />
+        <input type="button" onclick="Func()" value="Execute!" />
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+
+        <script>
+            function Func() {
+                var a = parseInt(document.getElementById("a").value, 10);
+              
+            }
+        </script>
+    </body>
+</html>

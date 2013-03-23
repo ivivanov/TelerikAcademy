@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 5</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write script that asks for a digit and depending on the input shows the name of that digit (in English) using a switch statement.</h3>
+        <label for="a">a</label>
+        <input type="text" id="a" name="a" />
+        <input type="button" onclick="Func()" value="Execute!" />
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+
+        <script>
+            function Func() {
+                var digit = parseInt(document.getElementById("a").value, 10);
+                var string;
+                switch (digit) {
+                    case 0:
+                        string = "Zero";
+                        break;
+                    case 1:
+                        string = "One";
+                        break;
+                    case 2:
+                        string = "Two";
+                        break;
+                    case 3:
+                        string = "Three";
+                        break;
+                    case 4:
+                        string = "Four";
+                        break;
+                    case 5:
+                        string = "Five";
+                        break;
+                    case 6:
+                        string = "Six";
+                        break;
+                    case 7:
+                        string = "Seven";
+                        break;
+                    case 8:
+                        string = "Eight";
+                        break;
+                    case 9:
+                        string = "Nine";
+                        break;
+                }
+                jsConsole.writeLine(string);
+            }
+        </script>
+    </body>
+</html>

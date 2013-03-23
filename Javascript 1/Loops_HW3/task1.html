@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 1</title>
+    <link href="../styles/js-console.css" rel="stylesheet" />
+</head>
+<body>    
+    <h3>Write a script that prints all the numbers from 1 to N</h3>
+    <input type="text" id="numberInputBox" />
+    <input type="button" onclick="print()" value="Execute" />
+    <div id="js-console"></div>
+	<script src="../scripts/js-console.js"></script>
+    <script>
+        function print() {
+            var n = parseInt( document.getElementById("numberInputBox").value,10);
+            for (var i = 1; i <= n; i++) {
+                jsConsole.writeLine(i);
+            }
+        }
+    </script>
+</body>
+</html>
