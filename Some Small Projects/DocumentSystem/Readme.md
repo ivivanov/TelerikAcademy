@@ -7,25 +7,25 @@ A document system holds a list of documents. Documents can be binary or text and
 Your first task is to design an object-oriented class hierarchy to model the document system and the documents it can hold using the best practices for object-oriented design (OOD) and object-oriented programming (OOP). Additionally you are given few C# interfaces that you should obligatory use:
 
 <blockquote>
-using System.Collections.Generic;
-public interface IDocument
-{
-    string Name { get; }
-    string Content { get; }
-    void LoadProperty(string key, string value);
-    void SaveAllProperties(IList<KeyValuePair<string, object>> output);
-    string ToString();
-}
-public interface IEditable
-{
-    void ChangeContent(string newContent);
-}
-public interface IEncryptable
-{
-    bool IsEncrypted { get; }
-    void Encrypt();
-    void Decrypt();
-}
+<p>using System.Collections.Generic;                                                                    </p>
+<p>public interface IDocument                                                                                  </p>
+<p>{                                                                                                                              </p>
+<p>    string Name { get; }                                                                                           </p> 
+<p>    string Content { get; }                                                                                        </p> 
+<p>    void LoadProperty(string key, string value);                                                  </p>
+<p>    void SaveAllProperties(IList<KeyValuePair<string, object>> output);       </p>
+<p>    string ToString();                                                                                               </p>
+<p>}                                                                                                                              </p>
+<p>public interface IEditable                                                                                     </p>
+<p>{                                                                                                                              </p>
+<p>    void ChangeContent(string newContent);                                                      </p> 
+<p>}                                                                                                                              </p>
+<p>public interface IEncryptable                                                                               </p>
+<p>{                                                                                                                              </p>
+<p>    bool IsEncrypted { get; }                                                                                   </p>
+<p>    void Encrypt();                                                                                                   </p>
+<p>    void Decrypt();                                                                                                  </p>
+<p>}                                                                                                                              </p>
 </blockquote>
 
 All your documents should implement IDocument. It specifies that documents have immutable Name and Content, can load their properties from key-value pairs through the LoadProperty(key, value) method and save their properties in a list of key-value pairs through the SaveAllProperties(…) method as well as be printed on the console through the ToString() method.
