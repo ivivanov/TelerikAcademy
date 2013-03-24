@@ -1,5 +1,10 @@
 #Task - Document System 
 
+## Solution Class Diagram
+
+![alt text](https://github.com/ivivanov/TelerikAcademy/blob/master/Some%20Small%20Projects/DocumentSystem/DocSysClassDiagram.jpg "Document System Class Diagram")
+
+
 A document system holds a list of documents. Documents can be binary or text and have name (mandatory) and can have content. Documents are of two types: text and binary. Text documents can have charset (e.g. utf-8 or windows-1251). Binary documents can have size (in bytes). Binary documents can be of type PDF, Word, Excel, Audio or Video. PDF documents can hold the number of pages they consist of. Word documents can hold the number of characters they consist of. Excel documents can hold the number of rows and the number of columns in the table they hold. Word and Excel documents are both office documents. Office document can have version (e.g. “2007” or “Office97”). A special kind of binary documents are the multimedia documents. All multimedia documents can have length (in seconds). Audio documents and video documents are both multimedia documents. Audio documents can have sample rate (in Hz). Video documents can have frame rate (in fps). PDF, Word and Excel documents are encryptable (can be encrypted and decrypted). Word and text documents are editable (their content could be changed). All document characteristics except their name are non-mandatory.
 
 ## Design the Class Hierarchy
