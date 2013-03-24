@@ -6,6 +6,7 @@ A document system holds a list of documents. Documents can be binary or text and
 
 Your first task is to design an object-oriented class hierarchy to model the document system and the documents it can hold using the best practices for object-oriented design (OOD) and object-oriented programming (OOP). Additionally you are given few C# interfaces that you should obligatory use:
 
+<blockquote>
 using System.Collections.Generic;
 public interface IDocument
 {
@@ -25,6 +26,7 @@ public interface IEncryptable
     void Encrypt();
     void Decrypt();
 }
+</blockquote>
 
 All your documents should implement IDocument. It specifies that documents have immutable Name and Content, can load their properties from key-value pairs through the LoadProperty(key, value) method and save their properties in a list of key-value pairs through the SaveAllProperties(…) method as well as be printed on the console through the ToString() method.
 All editable documents should implement the IEditable interface. All changes of the document content should pass through this interface (direct content changes are not allowed).
@@ -38,16 +40,16 @@ Your second task is to write a program that executes a sequence of up to 1000 co
 
 Commands consist of command name and attributes given in square brackets [ ]. Each attribute is given in the form key=value. Keys consist of small English letters. Values consist single line English text and cannot contain the following characters: [, ], =, ; and \n. The sequence of commands ends with an empty line.
 The valid commands that your program should be able to execute are the following:
-•	AddTextDocument[name=…;charset=…;content=…] – adds a text document to the document system. The name is obligatory, but all other attributes are optional. The order of the attributes can be arbitrary. All attributes will be valid for the type of the document we create. As a result the command prints on the console “Document added: <name>” is case of success or “Document has no name” in case of missing document name. Multiple documents having the same name are allowed to be added.
-•	AddPDFDocument[name=…;pages=…;size=…;content=…] – works like AddTextDocument.
-•	AddWordDocument[chars=…;name=…;version=…;size=…;content=…] – works like AddTextDocument.
-•	AddExcelDocument[rows=…;cols=…;version=…;size=…;name=…;content=…] – works like AddTextDocument.
-•	AddAudioDocument[name=…;content=…;samplerate=…;length=…;size=…] – works like AddTextDocument.
-•	AddVideoDocument[name=…;content=…;framerate=…;length=…;size=…] – works like AddTextDocument.
-•	EncryptDocument[name] – changes the state of all documents matching the specified name to “encrypted”. Documents that are already encrypted remain in “encrypted” state. For each document matching the specified name, the command prints as a result “Document encrypted: <name>” on the console or prints “Document does not support encryption: <name>” if the document is not encryptable. In case of no document is matching the specified name, the message “Document not found: <name>”.
-•	DecryptDocument[name] – works similarly like EncryptDocument, but changes the state of all matched documents to “not encrypted” and prints as result one of the following messages: “Document decrypted: <name>”, “Document does not support decryption: <name>” or “Document not found: <name>”.
-•	EncryptAllDocuments – changes the state of all documents that support encryption to “encrypted”. As result, if at least one document supports encryption, prints on the console “All documents encrypted”, otherwise prints “No encryptable documents found”.
-•	ListDocuments[] – prints on the console all the documents in the document system in their order of their addition. Each document should be printed alone on a single line in the following form:
++ AddTextDocument[name=…;charset=…;content=…] – adds a text document to the document system. The name is obligatory, but all other attributes are optional. The order of the attributes can be arbitrary. All attributes will be valid for the type of the document we create. As a result the command prints on the console “Document added: <name>” is case of success or “Document has no name” in case of missing document name. Multiple documents having the same name are allowed to be added.
++ AddPDFDocument[name=…;pages=…;size=…;content=…] – works like AddTextDocument.
++ AddWordDocument[chars=…;name=…;version=…;size=…;content=…] – works like AddTextDocument.
++ AddExcelDocument[rows=…;cols=…;version=…;size=…;name=…;content=…] – works like AddTextDocument.
++ AddAudioDocument[name=…;content=…;samplerate=…;length=…;size=…] – works like AddTextDocument.
++ AddVideoDocument[name=…;content=…;framerate=…;length=…;size=…] – works like AddTextDocument.
++ EncryptDocument[name] – changes the state of all documents matching the specified name to “encrypted”. Documents that are already encrypted remain in “encrypted” state. For each document matching the specified name, the command prints as a result “Document encrypted: <name>” on the console or prints “Document does not support encryption: <name>” if the document is not encryptable. In case of no document is matching the specified name, the message “Document not found: <name>”.
++ DecryptDocument[name] – works similarly like EncryptDocument, but changes the state of all matched documents to “not encrypted” and prints as result one of the following messages: “Document decrypted: <name>”, “Document does not support decryption: <name>” or “Document not found: <name>”.
++ EncryptAllDocuments – changes the state of all documents that support encryption to “encrypted”. As result, if at least one document supports encryption, prints on the console “All documents encrypted”, otherwise prints “No encryptable documents found”.
++ ListDocuments[] – prints on the console all the documents in the document system in their order of their addition. Each document should be printed alone on a single line in the following form:
 XXXDocument[key1=value1;key2=value2;…]
 The XXXDocument is the type of the document, e.g. PDFDocument, VideoDocument, etc. The keys should be ordered alphabetically. Keys with no value should be skipped. In there are no documents, the command prints “No documents found”. Encrypted documents are shown differently, as follows:
 XXXDocument[encrypted]
@@ -56,63 +58,63 @@ The commands are guaranteed to be valid. Only the described above commands will 
 
 ## Sample input:
 
-AddTextDocument[name=example.txt;charset=utf-8;content=Telerik Academy Exam]
-AddTextDocument[name=readme.txt]
-AddTextDocument[]
-EncryptAllDocuments[]
-AddPDFDocument[content=6A7E889CF3A8D2;name=academy.pdf;pages=2;size=38217]
-AddWordDocument[name=exam.docx;chars=12218;version=2012;size=36881]
-AddWordDocument[name=exam.docx]
-AddExcelDocument[name=academy.xls;rows=12;cols=3;size=9430;version=97]
-AddAudioDocument[size=9834733;name=ring.mp3;samplerate=44100;length=368800]
-AddVideoDocument[name=demo.mpg;framerate=24;length=87312;size=87245212]
-EncryptDocument[academy.pdf]
-EncryptDocument[ring.mp3]
-EncryptDocument[exam.docx]
-EncryptDocument[invalid.doc]
-ChangeContent[example.txt;new content]
-ChangeContent[demo.mpg;new content]
-ChangeContent[invalid.doc;new content]
-EncryptAllDocuments[]
-DecryptDocument[academy.pdf]
-DecryptDocument[exam.docx]
-DecryptDocument[ring.mp3]
-DecryptDocument[invalid.doc]
-ListDocuments[]
-(empty line)
++ AddTextDocument[name=example.txt;charset=utf-8;content=Telerik Academy Exam]
++ AddTextDocument[name=readme.txt]
++ AddTextDocument[]
++ EncryptAllDocuments[]
++ AddPDFDocument[content=6A7E889CF3A8D2;name=academy.pdf;pages=2;size=38217]
++ AddWordDocument[name=exam.docx;chars=12218;version=2012;size=36881]
++ AddWordDocument[name=exam.docx]
++ AddExcelDocument[name=academy.xls;rows=12;cols=3;size=9430;version=97]
++ AddAudioDocument[size=9834733;name=ring.mp3;samplerate=44100;length=368800]
++ AddVideoDocument[name=demo.mpg;framerate=24;length=87312;size=87245212]
++ EncryptDocument[academy.pdf]
++ EncryptDocument[ring.mp3]
++ EncryptDocument[exam.docx]
++ EncryptDocument[invalid.doc]
++ ChangeContent[example.txt;new content]
++ ChangeContent[demo.mpg;new content]
++ ChangeContent[invalid.doc;new content]
++ EncryptAllDocuments[]
++ DecryptDocument[academy.pdf]
++ DecryptDocument[exam.docx]
++ DecryptDocument[ring.mp3]
++ DecryptDocument[invalid.doc]
++ ListDocuments[]
++ (empty line)
 
 ##	Sample output:
 
-Document added: example.txt
-Document added: readme.txt
-Document has no name
-No encryptable documents found
-Document added: academy.pdf
-Document added: exam.docx
-Document added: exam.docx
-Document added: academy.xls
-Document added: ring.mp3
-Document added: demo.mpg
-Document encrypted: academy.pdf
-Document does not support encryption: ring.mp3
-Document encrypted: exam.docx
-Document encrypted: exam.docx
-Document not found: invalid.doc
-Document content changed: example.txt
-Document is not editable: demo.mpg
-Document not found: invalid.doc
-All documents encrypted
-Document decrypted: academy.pdf
-Document decrypted: exam.docx
-Document decrypted: exam.docx
-Document does not support decryption: ring.mp3
-Document not found: invalid.doc
-TextDocument[charset=utf-8;content=new content;name=example.txt]
-TextDocument[name=readme.txt]
-PDFDocument[content=6A7E889CF3A8D2;name=academy.pdf;pages=2;size=38217]
-WordDocument[chars=12218;name=exam.docx;size=36881;version=2012]
-WordDocument[name=exam.docx]
-ExcelDocument[encrypted]
-AudioDocument[length=368800;name=ring.mp3;samplerate=44100;size=9834733]
-VideoDocument[framerate=24;length=87312;name=demo.mpg;size=87245212]
++ Document added: example.txt
++ Document added: readme.txt
++ Document has no name
++ No encryptable documents found
++ Document added: academy.pdf
++ Document added: exam.docx
++ Document added: exam.docx
++ Document added: academy.xls
++ Document added: ring.mp3
++ Document added: demo.mpg
++ Document encrypted: academy.pdf
++ Document does not support encryption: ring.mp3
++ Document encrypted: exam.docx
++ Document encrypted: exam.docx
++ Document not found: invalid.doc
++ Document content changed: example.txt
++ Document is not editable: demo.mpg
++ Document not found: invalid.doc
++ All documents encrypted
++ Document decrypted: academy.pdf
++ Document decrypted: exam.docx
++ Document decrypted: exam.docx
++ Document does not support decryption: ring.mp3
++ Document not found: invalid.doc
++ TextDocument[charset=utf-8;content=new content;name=example.txt]
++ TextDocument[name=readme.txt]
++ PDFDocument[content=6A7E889CF3A8D2;name=academy.pdf;pages=2;size=38217]
++ WordDocument[chars=12218;name=exam.docx;size=36881;version=2012]
++ WordDocument[name=exam.docx]
++ ExcelDocument[encrypted]
++ AudioDocument[length=368800;name=ring.mp3;samplerate=44100;size=9834733]
++ VideoDocument[framerate=24;length=87312;name=demo.mpg;size=87245212]
 
