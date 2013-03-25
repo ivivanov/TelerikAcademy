@@ -1,7 +1,7 @@
-## Contents
+# Academy Popcorn API
 
-Author: Georgi Georgiev
-Additional tasks completed by Ivan Ivanov
+### Author: Georgi Georgiev
+### Additional tasks completed by Ivan Ivanov
 
 ## Solution Class Diagram - [diagram](https://github.com/ivivanov/TelerikAcademy/blob/master/Some%20Small%20Projects/PopcornGame/Documentation/ClassDiagram.bmp)
 
