@@ -23,7 +23,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="DocumentSystem">
-    <Position X="23" Y="0.5" Width="1.5" />
+    <Position X="14.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIACAAAAAAAAAIAAAAAAhAAAAAgAAAgAAAAgBkAEBIA=</HashCode>
       <FileName>DocumentSystem.cs</FileName>
@@ -66,7 +66,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TextDocument">
-    <Position X="13.5" Y="3.5" Width="1.5" />
+    <Position X="16.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAgAEAAAAA=</HashCode>
       <FileName>TextDocument.cs</FileName>
@@ -89,21 +89,21 @@
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="IDocument">
-    <Position X="24.75" Y="0.5" Width="1.5" />
+    <Position X="22.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAgAAEAAAAAAQAAAAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>IDocument.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="IEditable">
-    <Position X="28.25" Y="0.5" Width="1.5" />
+    <Position X="25.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>IEditable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="IEncryptable">
-    <Position X="26.5" Y="0.5" Width="1.5" />
+    <Position X="24" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAACAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IEncryptable.cs</FileName>
