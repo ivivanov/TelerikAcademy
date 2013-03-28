@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 3</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a function that finds all the occurrences of word in a text
+            The search can case sensitive or case insensitive
+            Use function overloading </h3>
+        <div id="js-console"></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+        <input type="text" id="input" />
+        <input type="button" onclick="count()" value="Find" />
+        <textarea id="myText"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ipsum tempor incididunt ut ipsum  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </textarea>
+        <script>
+            function count() {
+                var text = document.getElementById("myText").value;
+                var lookFor = document.getElementById("input").value;
+                var encounters = 0;
+                var matches = text.match(lookFor);
+                while (matches != null) {
+                    encounters++;
+                    text = text.substring(matches.index + lookFor.length, text.length);
+                    matches = text.match(lookFor);
+                }
+                jsConsole.writeLine(encounters);
+            }
+
+        </script>
+    </body>
+</html>

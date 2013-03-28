@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 4</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a function to count the number of divs on the web page</h3>
+        <div id="js-console"></div>
+        <div><div></div></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+        <script>
+            ;(function () {
+                var allDocumentDivs = document.getElementsByTagName("div");
+                jsConsole.writeLine(allDocumentDivs.length);
+            }())
+        </script>
+    </body>
+</html>

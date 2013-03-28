@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 5</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a function that counts how many times given number appears in given array. Write a test function to check if the function is working correctly.</h3>
+        <label for="input">Enter number to look for</label> 
+        <input type="text" id="input" />
+        <input type="button" onclick="count()" value="Count" />
+        <div id="js-console"></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+
+        <script>
+            
+            function count() {
+                var arr = [1, 5, 45, 231, 14, 46, 89, 2, 1, 23, 5, 6, 2, 54, 7, 2];
+                jsConsole.write("Given array: ");
+                jsConsole.writeLine(arr.join(', '));
+
+                var lookFor = document.getElementById("input").value;
+                var encounters = 0;
+            
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i] === lookFor) {
+                        encounters++;
+                    }
+                }
+            
+                jsConsole.writeLine(encounters);
+            }
+        </script>
+    </body>
+</html>
+    

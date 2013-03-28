@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 7</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a Function that returns the index of the first element in array that is bigger than its neighbors, or -1,
+            if there’s no such element.
+            Use the function from the previous exercise.</h3>
+        <div id="js-console"></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+
+        <script>
+            function isVadlidIndex(number, arrLen) {
+                if (number >= 0 && number < arrLen) {
+                    return true;
+                }
+                return false;
+            }
+
+            function check(index, arr) {
+                if (isVadlidIndex(index, arr.length) && isVadlidIndex(index - 1, arr.length) && isVadlidIndex(index + 1, arr.length)) {
+                    if (arr[index] > arr[index + 1] && arr[index] > arr[index - 1]) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+                else {
+                    return false;
+                }
+            }
+
+            ; (function () {
+                var arr = [1, 5, 45, 231, 14, 46, 89, 2, 1, 23, 5, 6, 2, 54, 7, 2];
+                jsConsole.write("Given array: ");
+                jsConsole.writeLine(arr.join(', '));
+                for (var i = 0; i < arr.length; i++) {
+                    if (check(i, arr)) {
+                        jsConsole.writeLine(i);
+                        break;
+                    }
+                }
+            }())
+        </script>
+    </body>
+</html>
+        

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body>
+
+    </body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 2</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a function that reverses the digits of given decimal number. Example: 256 -> 652</h3>
+        <div id="js-console"></div>
+        <script src="../scripts/js-console.js"></script>
+        <script>
+            function numberLen(number) {
+                var count = 0;
+                while (number > 0) {
+                    count++;
+                    number = parseInt(number / 10);
+                }
+                return count;
+            }
+
+            function reverseNumber(number) {
+                var reversed = new Number();
+                var len = numberLen(number);
+                while (len > 0) {
+                    reversed += (number % 10) * Math.pow(10, len - 1);
+                    number = parseInt(number / 10);
+                    len--;
+                }
+                return reversed;
+            }
+            jsConsole.write("235 ->");
+            jsConsole.writeLine(reverseNumber(235));
+            jsConsole.write("2534 ->");
+            jsConsole.writeLine(reverseNumber(2534));
+            jsConsole.write("10000 ->");
+            jsConsole.writeLine(reverseNumber(10000));
+            jsConsole.write("9999 ->");
+            jsConsole.writeLine(reverseNumber(9999));
+        </script>
+    </body>
+</html>

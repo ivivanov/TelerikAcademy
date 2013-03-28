@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 1</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <span>Write functions for working with shapes in standard Planar coordinate system
+            Points are represented by coordinates P(X, Y)
+            Lines are represented by two points, marking their beginning and ending
+            L(P1(X1,Y1),P2(X2,Y2))
+            Calculate the distance between two points
+            Check if three segment lines can form a triangle </span>
+        <div id="js-console"></div>
+
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+        <script>
+            function buildPoint(xCoord, yCoord) {
+                return {
+                    X: xCoord,
+                    Y: yCoord
+                }
+            }
+            
+            function calculetaDistance(pointA, pointB) {
+                return Math.sqrt(Math.pow(pointB.X - pointA.X, 2) + Math.pow(pointB.Y - pointA.Y, 2));
+            }
+
+            function buildLine(pointA, pointB) {
+                return {
+                    pointA: pointA,
+                    pointB: pointB,
+                    length: function ab () {
+                        return calculetaDistance(this.pointA,this.pointB);
+                    }
+                }
+            }
+            
+            
+            function canFormTriangle(lineA, lineB, lineC) {
+                var lenA = lineA.length();
+                var lenB = lineB.length();
+                var lenC = lineC.length();
+                if (
+                    (lenA + lenB) > lenC &&
+                    (lenA + lenC) > lenB &&
+                    (lenB + lenC) > lenA) {
+                    return true;
+                }
+                return false;
+            }
+           
+            
+            var a = buildPoint(0, 0);
+            var b = buildPoint(3, 0);
+            var c = buildPoint(3, 3);
+            var ab = buildLine(a, b);
+            var bc = buildLine(b, c);
+            var ac = buildLine(a, c);
+            jsConsole.write(canFormTriangle(ab, bc, ac));
+            jsConsole.write(ab.length());
+        </script>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 1</title>
+    <link href="../styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a function that returns the last digit of given integer as an English word. Examples: 512  "two", 1024  "four", 12309  "nine"
+</h3>
+    <div id="js-console"></div>
+	<script type="text/javascript" src="../scripts/js-console.js"></script>
+    <script>
+
+        function lastDigitToWord(number) {
+            var lastDigit = number % 10;
+            switch (lastDigit) {
+                case 1:
+                    {
+                        jsConsole.writeLine("one");
+                        break;
+                    }
+                case 2:
+                    {
+                        jsConsole.writeLine("two");
+                        break;
+                    }
+                case 3:
+                    {
+                        jsConsole.writeLine("three");
+                        break;
+                    }
+                case 4:
+                    {
+                        jsConsole.writeLine("four");
+                        break;
+                    }
+                case 5:
+                    {
+                        jsConsole.writeLine("five");
+                        break;
+                    }
+                case 6:
+                    {
+                        jsConsole.writeLine("six");
+                        break;
+                    }
+                case 7:
+                    {
+                        jsConsole.writeLine("seven");
+                        break;
+                    }
+                case 8:
+                    {
+                        jsConsole.writeLine("eight");
+                        break;
+                    }
+                case 9:
+                    {
+                        jsConsole.writeLine("nine");
+                        break;
+                    }
+                case 0:
+                    {
+                        jsConsole.writeLine("zero");
+                        break;
+                    }
+            }
+        }
+
+        lastDigitToWord(123);
+        lastDigitToWord(456);
+        lastDigitToWord(8);
+        lastDigitToWord(000);
+    </script>
+</body>
+</html>
