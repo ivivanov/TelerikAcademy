@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 6</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <span>Write a function that groups an array of persons by age, first or last name.
+            The function must return an associative array, with keys - the groups, and values -arrays with persons in this groups
+            Use function overloading (i.e. just one function)
+            <pre>
+                var persons = {…};
+                var groupedByFname = group(persons,"firstname");
+                var groupedByAge= group(persons,"age");
+            </pre></span>
+        <div id="js-console"></div>
+
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+
+        <script>
+            function group(people, property) {
+                var group = {};
+                switch (property) {
+                    case "firstname":
+                        for (var i in people) {
+                            var firstname = people[i]["firstname"];
+                            group[firstname] = group[firstname] || [];
+                            group[firstname].push(people[i]);
+                        }
+                        break;
+                    case "lastname":
+                        for (var i in people) {
+                            var lastname = people[i]["lastname"];
+                            group[lastname] = group[lastname] || [];
+                            group[lastname].push(people[i]);
+                        }
+                        break;
+                    case "age":
+                        for (var i in people) {
+                            var age = people[i]["age"];
+                            group[age] = group[age] || [];
+                            group[age].push(people[i]);
+                        }
+                        break;
+                    default:
+                        return undefined;
+                }
+                return group;
+            }
+            
+            var people = [
+                { firstname: "Gosho", lastname: "Petrov", age: 44 },
+                { firstname: "Bay", lastname: "Tosho", age: 81 },
+                { firstname: "Bay", lastname: "Stamat", age: 81 },
+                { firstname: "Bay", lastname: "Ivan", age: 81 },
+                { firstname: "Hristo", lastname: "Smirnenski", age: 22 },
+                { firstname: "Jeliu", lastname: "Jelev", age: 42 },
+                { firstname: "Grozdan", lastname: "Petrov", age: 123 }
+            ];
+
+            jsConsole.write("By first name");
+            for (var i in group(people, "firstname")) {
+                jsConsole.writeLine("Group: " + i);
+            }
+            
+            jsConsole.write("By last name");
+            for (var i in group(people, "lastname")) {
+                jsConsole.writeLine("Group: " + i);
+            }
+
+            jsConsole.write("By age");
+            for (var i in group(people, "age")) {
+                jsConsole.writeLine("Group: " + i);
+            }
+    
+        </script>
+    </body>
+</html>

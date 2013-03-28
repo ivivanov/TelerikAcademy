@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 4</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <span>Write a function that checks if a given object contains a given property </span>
+        <div id="js-console"></div>
+
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+        <script>
+            function hasProperty(object, propName) {
+                if (object[propName] === undefined){
+                    return false;
+                }
+                return true;
+            }
+            var student = {
+                name: "Pesho"
+            }
+            jsConsole.writeLine(hasProperty(student, "name"));
+
+            var arr = [];
+            Array.prototype.ddff = {
+                ddff: "asd"
+            }
+            jsConsole.writeLine(hasProperty(arr, "ddff"));
+        </script>
+    </body>
+</html>

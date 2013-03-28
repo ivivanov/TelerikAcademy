@@ -11,6 +11,36 @@
 
         <script type="text/javascript" src="../scripts/js-console.js"></script>
         <script>
+            
+            function deepCopy(p, c) {
+                var c = c || {};
+                for (var i in p) {
+                    if (typeof p[i] === 'object') {
+                        c[i] = (p[i].constructor === Array) ? [] : {};
+                        deepCopy(p[i], c[i]);
+                    }
+                    else {
+                        c[i] = p[i];
+                    }
+                }
+                return c;
+            }
+
+            //Testing
+            var arr = [1, 2, 3, 4];
+            var arrCopy = [];
+            arrCopy = deepCopy(arr, arrCopy);
+            jsConsole.write("Original:");
+            jsConsole.writeLine(arr.join(", "));
+            jsConsole.write("Copy before changes:");
+            jsConsole.writeLine(arrCopy.join(", "));
+
+            arrCopy[1] = "Change";
+            jsConsole.write("Copy after change:");
+            jsConsole.writeLine(arrCopy.join(", "));
+
+            jsConsole.write("Original afte copy change:");
+            jsConsole.writeLine(arr.join(", "));
 
         </script>
     </body>
