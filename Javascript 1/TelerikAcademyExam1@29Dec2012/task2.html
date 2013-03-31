@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Problem 2 – Quadronacci Rectangle</title>
+    </head>
+    <script>
+
+        function Solve(args) {
+            var q1 = parseInt(args[0]);
+            var q2 = parseInt(args[1]);
+            var q3 = parseInt(args[2]);
+            var q4 = parseInt(args[3]);
+            var rows = parseInt(args[4]);
+            var cols = parseInt(args[5]);
+            var sequence = new Array(rows * cols);
+            sequence[0] = q1;
+            sequence[1] = q2;
+            sequence[2] = q3;
+            sequence[3] = q4;
+            var qn = new Number();
+            for (var i = 4; i < sequence.length; i++) {
+                qn = q1 + q2 + q3 + q4;
+                sequence[i] = qn;
+                q1 = q2;
+                q2 = q3;
+                q3 = q4;
+                q4 = qn;
+            }
+
+            var result = "";
+            var seqIndex =0;
+            for (var i = 0; i < rows; i++) {
+                for (var j = 0; j < cols; j++) {
+                    if (j == cols - 1) {
+                        result += sequence[seqIndex++] + "\r\n";
+                    }
+                    else {
+                        result += sequence[seqIndex++] + " ";
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        function SolveIO() {
+            var args = [];
+            args[0] = "5";
+            args[1] = "-5";
+            args[2] = "1";
+            args[3] = "2";
+            args[4] = "3";
+            args[5] = "4";
+
+            console.log(Solve(args));
+        }
+
+
+    </script>
+    <body onload="SolveIO();">
+
+    </body>
+</html>

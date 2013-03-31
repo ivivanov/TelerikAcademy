@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Problem 5 – Angry Bits</title>
+    </head>
+    <script>
+
+        function isLegitIndex(row, col) {
+            if (row < 0 || row > 7 || col < 0 || col > 15) {
+                return false;
+            }
+            return true;
+        }
+        
+
+        function Solve(args) {
+            if (!String.prototype.padLeft) {
+                String.prototype.padLeft = function (count, char) {
+                    char = char || " ";
+                    if (char.length > 1) {
+                        return String(this);
+                    }
+                    if (this.length >= count) {
+                        return String(this);
+                    }
+                    var str = String(this);
+                    for (var i = 0, thisLen = str.length; i < count - thisLen; i++) {
+                        str = char + str;
+                    }
+                    return str;
+                }
+            }
+        
+            var field = [];
+            var cols = 0;
+            var rows = 0;
+            var totalPoints = 0;
+            var totalKilledPigs = 0;
+            var allPigs = 0;
+            for (cols = 0; cols < 8; cols++) {
+                field.push(parseInt(args[cols]).toString(2).padLeft(16, '0').split(""));
+            }
+        
+            //count all pigs
+            for (cols = 8; cols <= 15; cols++) {
+                for (rows = 0; rows < 8; rows++) {
+                    if (field[rows][cols] == 1) {
+                        allPigs++;
+                    }
+                }
+            }
+
+
+            // start shooting birds from right to left
+            for (cols = 7; cols >= 0; cols--) { // move through bird columns 7 to 0
+                for (rows = 0; rows < 8; rows++) {  // move through the column 0 to 7
+                    if (field[rows][cols] == 1) {// check for birds in current column
+                        field[rows][cols] = 0;
+                        var directions = [-1, 1];
+                        var moveRow = rows;
+                        var moveCol = cols;
+                        var flightLen = 0;
+                        var killedPigs = 0;
+                        var currentPoints = 0;
+                        while (true) {
+                            if (moveRow == 0) {
+                                directions = [1, 1];
+                            }
+                            moveRow += directions[0];
+                            moveCol += directions[1];
+                            flightLen++;
+        
+                            if (field[moveRow][moveCol] == 1) {//check for pig collision
+                                killedPigs++;
+                                field[moveRow][moveCol] = 0;
+        
+                                // check for pigs in all directions
+                                if (isLegitIndex(moveRow - 1, moveCol)) {
+                                    if (field[moveRow - 1][moveCol] == 1) {
+                                        field[moveRow - 1][moveCol] = 0;
+                                        killedPigs++;
+                                    }
+                                }
+                                if (isLegitIndex(moveRow - 1, moveCol - 1)) {
+                                    if (field[moveRow - 1][moveCol - 1] == 1) {
+                                        field[moveRow - 1][moveCol - 1] = 0;
+                                        killedPigs++;
+                                    }
+                                }
+                                if (isLegitIndex(moveRow - 1, moveCol + 1)) {
+                                    if (field[moveRow - 1][moveCol + 1] == 1) {
+                                        field[moveRow - 1][moveCol + 1] = 0;
+                                        killedPigs++;
+                                    }
+                                }
+                                if (isLegitIndex(moveRow, moveCol - 1)) {
+                                    if (field[moveRow][moveCol - 1] == 1) {
+                                        field[moveRow][moveCol - 1] = 0;
+                                        killedPigs++;
+                                    }
+                                }
+                                if (isLegitIndex(moveRow , moveCol + 1)) {
+                                    if (field[moveRow][moveCol + 1] == 1) {
+                                        field[moveRow][moveCol + 1] = 0;
+                                        killedPigs++;
+                                    }
+                                }
+                                if (isLegitIndex(moveRow + 1, moveCol)) {
+                                    if (field[moveRow + 1][moveCol] == 1) {
+                                        field[moveRow + 1][moveCol] = 0;
+                                        killedPigs++;
+                                    }
+                                }
+                                if (isLegitIndex(moveRow + 1, moveCol - 1)) {
+                                    if (field[moveRow + 1][moveCol - 1] == 1) {
+                                        field[moveRow + 1][moveCol - 1] = 0;
+                                        killedPigs++;
+                                    }
+                                }
+                                if (isLegitIndex(moveRow + 1, moveCol + 1)) {
+                                    if (field[moveRow + 1][moveCol + 1] == 1) {
+                                        field[moveRow + 1][moveCol + 1] = 0;
+                                        killedPigs++;
+                                    }
+                                }
+                                break;
+                            }
+                            if (moveRow == 7 || moveCol == 15) {
+                                break;
+                            }
+                        }
+                        //calculate points
+                        currentPoints = flightLen * killedPigs;
+                        totalPoints += currentPoints;
+                        totalKilledPigs += killedPigs;
+                        break;
+                    }
+                }
+            }
+            if (allPigs == totalKilledPigs) {
+                return totalPoints + " Yes";
+            }
+            return totalPoints + " No";;
+        }
+
+        function SolveIO() {
+            var args = [];
+            args[0] = "0";
+            args[1] = "6";
+            args[2] = "32780";
+            args[3] = "14";
+            args[4] = "256";
+            args[5] = "0";
+            args[6] = "0";
+            args[7] = "64";
+        
+            console.log(Solve(args));
+        }
+        
+        
+    </script>
+    <body onload="SolveIO();">
+    
+    </body>
+</html>
+    

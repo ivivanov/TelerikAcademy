@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Problem 4 – UK Flag</title>
+    </head>
+    <script>
+
+        function Solve(args) {
+            var size = parseInt(args[0]);
+            var i = 0;
+            var j = 0;
+            var leftLine = '\\';
+            var middleLine = '|';
+            var rightLine = '/';
+            var innerPoints = (size - 3) / 2;
+            var outterPoints = 0;
+            var result = "";
+
+            //print upper
+            for (i = 0; i < (size - 1)/2; i++) {
+                for (var j = 0; j < outterPoints; j++) {
+                    result += '.';
+                }
+
+                result += leftLine;
+
+                for (j = 0; j < innerPoints; j++) {
+                    result += '.';
+                }
+
+                result += middleLine;
+
+                for (j = 0; j < innerPoints; j++) {
+                    result += '.';
+                }
+                result += rightLine;
+
+                for (j = 0; j < outterPoints; j++) {
+                    result += '.';
+                }
+
+                result += "\r\n";
+                innerPoints--;
+                outterPoints++;
+            }
+            
+            //print middle
+            for (i = 0; i < (size-1)/2; i++) {
+                result += '-';
+            }
+            result += '*';
+            for (i = 0; i < (size - 1) / 2; i++) {
+                result += '-';
+            }
+            result += "\r\n";
+
+            //print bottom
+            innerPoints++;
+            outterPoints--;
+            for (i = 0; i < (size - 1) / 2; i++) {
+                for (var j = 0; j < outterPoints; j++) {
+                    result += '.';
+                }
+
+                result += rightLine;
+
+                for (j = 0; j < innerPoints; j++) {
+                    result += '.';
+                }
+
+                result += middleLine;
+
+                for (j = 0; j < innerPoints; j++) {
+                    result += '.';
+                }
+                result += leftLine;
+
+                for (j = 0; j < outterPoints; j++) {
+                    result += '.';
+                }
+
+                result += "\r\n";
+                innerPoints++;
+                outterPoints--;
+            }
+
+            return result;
+        }
+
+        function SolveIO() {
+            var args = [];
+            args[0] = "9";
+            
+            console.log(Solve(args));
+        }
+
+
+    </script>
+    <body onload="SolveIO();">
+
+    </body>
+</html>

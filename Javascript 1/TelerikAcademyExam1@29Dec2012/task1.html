@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Triple Rotation of Digits</title>
+    </head>
+    <script>
+
+        function Solve(args) {
+            var number = args[0].split("");
+            var len = number.length -1;
+
+            for (var i = 0; i < 3; i++) {
+                if (number[len] == 0) {
+                    number.pop();
+                    len--;
+                }
+                else {
+                    var temp = number.pop();
+                    number.unshift(temp);
+                }
+            }
+            return number.join("");
+        }
+
+        function SolveIO() {
+            var args = [];
+            args[0] = "180001";
+
+            console.log(Solve(args));
+        }
+
+
+    </script>
+    <body onload="SolveIO();">
+    
+    </body>
+</html>

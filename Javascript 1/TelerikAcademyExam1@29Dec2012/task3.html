@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Problem 3 – Poker</title>
+    </head>
+    <script>
+        function Solve(args) {
+            var poker = {};
+            var input;
+            for (var i = 0; i < 5; i++) {
+                input = args[i];
+                if (input == "J") {
+                    if (poker[9] == undefined)
+                        poker[9] = 1;
+                    else
+                        poker[9]++;
+                }
+                else
+                    if (input == "Q") {
+                        if (poker[10] == undefined)
+                            poker[10] = 1;
+                        else
+                            poker[10]++;
+                    }
+                    else
+                        if (input == "K") {
+                            if (poker[11] == undefined)
+                                poker[11] = 1;
+                            else
+                                poker[11]++;
+                        }
+                        else
+                            if (input == "A") {
+                                if (poker[12] == undefined)
+                                    poker[12] = 1;
+                                else
+                                    poker[12]++;
+                            }
+                            else {
+                                if (poker[parseInt(input) - 2] == undefined)
+                                    poker[parseInt(input) - 2] = 1;
+                                else
+                                    poker[parseInt(input) - 2]++;
+                            }
+            }
+        
+            var straight = ((poker[12] == 1) && poker.indexOf(0) == -1);
+            for (var i = 0; (i < 9) && (straight == false); i++) {
+                if (poker.indexOf(0) == -1)
+                    straight = true;
+            }
+            poker.sort();
+            switch (poker[12]) {
+                case 5:
+                    return "Impossible";
+                case 4:
+                    return "Four of a Kind";
+                case 3:
+                    if (poker[11] == 2)
+                        return "Full House";
+                    else
+                        return "Three of a Kind";
+                case 2:
+                    if (poker[11] == 2)
+                        return "Two Pairs";
+                    else
+                        return "One Pair";
+                case 1:
+                    if (straight)
+                        return "Straight";
+                    else
+                        return "Nothing";
+            }
+        }
+        
+        function SolveIO() {
+            var args = [];
+            args[0] = "5";
+            args[1] = "-5";
+            args[2] = "1";
+            args[3] = "2";
+            args[4] = "3";
+            args[5] = "4";
+        
+            console.log(Solve(args));
+        }
+    </script>
+    <body onload="SolveIO();">
+    
+    </body>
+</html>
