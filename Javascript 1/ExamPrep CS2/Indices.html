@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Indices</title>
+    </head>
+    <script>
+
+        function Solve(args) {
+            return args.join(' ');
+        }
+
+        function Solve(args) {
+            var indices = args[1].split(' ');
+            var currIndex = "0";
+            var resultNumbers = [];
+            var visited = {};
+            var loopStartIndex = -1;
+
+            while (currIndex >= 0 && currIndex < indices.length) {
+                resultNumbers.push(currIndex);
+                visited[currIndex] = true;
+                currIndex = indices[currIndex];
+                if (visited[currIndex] == true) {
+                    for (var i = 0; i < resultNumbers.length; i++) {
+                        if (resultNumbers[i] == currIndex) {
+                            loopStartIndex = i;
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+
+            if (loopStartIndex != -1) {
+                
+                resultNumbers.splice(loopStartIndex, 1, "(" + resultNumbers[loopStartIndex]);
+                //return resultNumbers;
+                resultNumbers[resultNumbers.length - 1] = resultNumbers[resultNumbers.length - 1] + ")";
+                var stringResult = "";
+                for (var i = 0; i < resultNumbers.length; i++) {
+                    if (i == 0) {
+                        stringResult += resultNumbers[i];
+                    }
+                    else {
+                        if (i == loopStartIndex) {
+                            stringResult += resultNumbers[i];
+                        }
+                        else {
+                            stringResult += " " + resultNumbers[i];
+                        }
+                    }
+                }
+                return stringResult;
+            }
+            else {
+                return resultNumbers.join(' ');
+            }
+        }
+        
+        function SolveIO() {
+            //simulirame si args. Vse edno sme go polu4ili.
+            var args = [];
+            ///////////0 1 2 3 4 5 6
+            //args[1] = "3 6 2 4 7 2 6 7 2 2 4 7 3 57 2";
+            args[1] = "1 2 3 5 7 1";
+
+            ///////////0 3 4(7) 
+            console.log(Solve(args));
+        }
+    </script>
+    <body onload="SolveIO();">
+    
+    </body>
+</html>

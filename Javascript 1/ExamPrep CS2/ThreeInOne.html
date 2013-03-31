@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Problem 5 – Three in One</title>
+    </head>
+    <script>
+
+        function Solve(args) {
+            //prepare input
+
+            //task1
+            var pointsArr = args[0].split(",");
+            for (var i = 0; i < pointsArr.length; i++) {
+                pointsArr[i] = parseInt(pointsArr[i]);
+            }
+        
+            //task2
+            var cakes = args[1].split(",");
+            for (var i = 0; i < cakes.length; i++) {
+                cakes[i] = parseInt(cakes[i]);
+            }
+            var friends = parseInt(args[2]);
+        
+            //task3
+            var task3input = args[3].split(" ");
+
+            //push all results here
+            var result = [];
+            /////////////////////////////////////////
+            //task 1
+            var tablePoints = {};
+            for (var i = 0; i < pointsArr.length; i++) {
+                if (pointsArr[i] <= 21) {
+                    if (tablePoints[pointsArr[i]] == undefined) {
+                        tablePoints[pointsArr[i]] = 1;
+                    }
+                    else {
+                        tablePoints[pointsArr[i]]++;
+                    }
+                }
+            }
+        
+            var index = -1;
+            for (var i = 21; i > 0; i--) {
+                if (tablePoints[i] != undefined) {
+                    if (tablePoints[i] == 1) {
+                        index = pointsArr.indexOf(i);
+                    }
+                    break;
+                }
+            }
+        
+            result.push(index);
+            //////////////////////////////////
+        
+            //task 2
+        
+            cakes.sort();
+            friends++;
+            var friendIndex = 1;
+            var myBites = 0;
+            for (var i = cakes.length - 1; i >= 0 ; i--) {
+                if (friendIndex == 1) {
+                    myBites += cakes[i];
+                }
+                friendIndex++;
+                if (friendIndex > friends) {
+                    friendIndex = 1;
+                }
+            }
+
+            result.push(myBites);
+            /////////////////////////////////
+
+            //task 3
+            var g1 = parseInt(task3input[0]);
+            var s1 = parseInt(task3input[1]);
+            var b1 = parseInt(task3input[2]);
+            var g2 = parseInt(task3input[3]);
+            var s2 = parseInt(task3input[4]);
+            var b2 = parseInt(task3input[5]);
+            var transactionCounter = 0;
+
+            
+
+            //////////////////////////////////
+            return result.join("\n");
+        }
+        
+        function SolveIO() {
+            var args = [];
+            args[0] = "21,21,31";
+            args[1] = "6,7,9,6,4";
+            args[2] = "2";
+            args[3] = "1 0 0 0 0 81";
+        
+            console.log(Solve(args));
+        }
+        
+        
+    </script>
+    <body onload="SolveIO();">
+        
+    </body>
+</html>
+        

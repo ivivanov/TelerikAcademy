@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Joro the Rabbit</title>
+    </head>
+    <script>
+
+        function Solve(args) {
+            var arr = args[0].split(", ");
+            var numbers = [];
+            for (var i in arr) {
+                numbers[i] = parseInt(arr[i]);
+            }
+            var len = numbers.length;
+            var maxWalk = 0;
+
+            for (var startPosition = 0; startPosition < len; startPosition++) {
+                for (var step = 1; step < len; step++) {
+
+                    var visited = [];
+                    var jumpsCount = 1;
+                    var currentPosition = startPosition;
+                    var nextPosition = currentPosition + step;
+                    if (nextPosition >= len) {
+                        nextPosition = nextPosition - len;
+                    }
+
+                    while (visited[nextPosition] != true && numbers[nextPosition] > numbers[currentPosition]) {
+                        visited[nextPosition] = true;
+                        jumpsCount++;
+                        currentPosition = nextPosition;
+                        nextPosition += step;
+                        if (nextPosition >= len) {
+                            nextPosition = nextPosition - len;
+                        }
+                    }
+                   
+                    if (maxWalk < jumpsCount) {
+                        maxWalk = jumpsCount;
+                    }
+
+                }
+            }
+            return maxWalk;
+
+        }
+        
+        function SolveIO() {
+            var args = [];
+            args[0] = "1, 1, 1";
+            console.log(Solve(args));
+        }
+    </script>
+    <body onload="SolveIO();">
+    
+    </body>
+</html>

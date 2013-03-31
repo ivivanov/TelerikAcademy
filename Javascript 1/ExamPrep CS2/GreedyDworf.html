@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Greedy Dworf</title>
+    </head>
+    <script>
+
+        function Solve(args) {
+            var valley = args[0].split(", ");
+            var patternsCount = parseInt(args[1]);
+            var patterns = [];
+            for (var i = 0; i < patternsCount; i++) {
+                var currPattern = args[i + 2].split(", ");
+                patterns.push(currPattern);
+            }
+        
+            //parseInt valley
+            for (var i = 0; i < valley.length; i++) {
+                valley[i] = parseInt(valley[i]);
+            }
+            var maxCoins = -10000000;
+
+            for (var i = 0; i < patterns.length; i++) {
+                
+                var coins = 0;
+                var visited = {};
+                var patternPosition = 0;
+                var currentPosition = 0;
+        
+                while (currentPosition >= 0 && currentPosition < valley.length && visited[currentPosition] != true) {
+                    coins += valley[currentPosition];
+                    visited[currentPosition] = true;
+                    currentPosition = currentPosition + parseInt(patterns[i][patternPosition]);
+        
+                    patternPosition++;
+                    if (patternPosition == patterns[i].length) {
+                        patternPosition = 0;
+                    }
+                }
+        
+                if (maxCoins < coins) {
+                    maxCoins = coins;
+                }
+            }
+        
+            return maxCoins;
+        }
+        
+        function SolveIO() {
+            var args = [];
+            args[0] = "1, 3, -6, 7, 4 , 1, 12";
+            args[1] = "3";
+            args[2] = "1, 2, -3";
+            args[3] = "1, 3, -2";
+            args[4] = "1, -1";
+        
+            console.log(Solve(args));
+        }
+        
+
+    </script>
+    <body onload="SolveIO();">
+    
+    </body>
+</html>

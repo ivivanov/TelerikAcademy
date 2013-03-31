@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Problem 2 – Special Value</title>
+    </head>
+    <script>
+
+        function Solve(args) {
+            //prepare the input
+            var rowCount = parseInt(args[0]);
+            var rows = [];
+            for (var i = 1; i <= rowCount; i++) {
+                rows.push(args[i].split(", "));
+            }
+            //parse to int each row
+            for (var i = 0; i < rows.length; i++) {
+                for (var j = 0; j < rows[i].length; j++) {
+                    rows[i][j] = parseInt(rows[i][j]);
+                }
+            }
+
+            ///////////////////////////////////////////////////
+            var maxPath = 0;
+            var maxSpecialValue = 0;
+            for (var i = 0; i < rows[0].length; i++) {
+                var visited = {};
+
+                var start = rows[0][i];
+                var currPath = 0;
+                var specialValue = 0;
+                var walker = 0;
+                var rowIndex = 0;
+
+                if (start < 0) {
+                    currPath = 1;
+                    specialValue = 1 + Math.abs(start);
+                }
+                else {
+                    walker = start;
+
+                    while (walker >= 0 && visited[rowIndex + "." + walker] != true) {
+                        visited[rowIndex + "." + walker] = true;
+
+                        currPath++;
+
+                        rowIndex++;
+                        if (rowIndex >= rowCount) {
+                            rowIndex = 0;
+                        }
+                        walker = rows[rowIndex][walker];
+                       
+                    }
+                }
+        
+                if (walker < 0) {
+                    currPath++;
+                    specialValue = currPath + Math.abs(walker);
+                    if (maxSpecialValue < specialValue) {
+                        maxSpecialValue = specialValue;
+                    }
+                }
+                else {
+                    if (maxSpecialValue < specialValue) {
+                        maxSpecialValue = specialValue;
+                    }
+                }
+            }
+            return maxSpecialValue;
+        }
+        
+        function SolveIO() {
+            //var args = [];
+            //args[0] = "6";
+            //args[1] = "5, -4, 8, -5, 0";
+            //args[2] = "-1, -2, -1, 1, 0, -1, -1, -2, 1";
+            //args[3] = "3, -5";
+            //args[4] = "4, -9, -4, 4, 0, 7";
+            //args[5] = "1, -2, -8, 4, -8, 7, -5, -4, -4";
+            //args[6] = "4, -1, 0, -3, 2, 4, -4, 1";
+
+            var args = [];
+            args[0] = "2";
+            args[1] = "0, -3, 0, 3";
+            args[2] = "0, 3, 0, 2, 0";
+
+        
+            console.log(Solve(args));
+        }
+        
+        
+    </script>
+    <body onload="SolveIO();">
+
+    </body>
+</html>
+    

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Problem 5 – One Task is Not Enough</title>
+    </head>
+    <script>
+
+        function Solve(args) {
+            //prepare the input
+
+            var lampsCount = parseInt(args[0]);
+            var commandLine1 = args[1].split("");
+            var commandLine2 = args[2].split("");
+            
+            var output = [];
+
+            /////////////////////
+
+            //1st part
+
+            var lampsArr = new Array(lampsCount);
+            var switchedLamps = 0;
+            var lastLamp = -1;
+            var step = 2;
+            var iter = 0;
+
+            while (switchedLamps < lampsCount) {
+
+                //find where i starts
+                for (var i = 0; i < lampsCount; i++) {
+                    if (lampsArr[i] != true) {
+                        iter = i;
+                        break;
+                    }
+                }
+                /////////////////////////
+
+
+                while (iter < lampsCount) {
+                    if (lampsArr[iter] != true) {
+                        switchedLamps++;
+                        lastLamp = iter+1;
+                        lampsArr[iter] = true;
+                    }
+                    iter += step;
+                }
+
+                step++;
+            }
+            ////////////////////
+
+            //return lastLamp;
+            output[0] = lastLamp;
+
+            //2nd part
+
+            var countR = 0;
+            var countL = 0;
+            var countS =0;
+            for (var i = 0; i < commandLine1.length; i++) {
+                if (commandLine1[i] == "R") {
+                    countR++;
+                }
+                else if (commandLine1[i] == "L") {
+                    countL++;
+                }
+                else{
+                    countS++;
+                }
+            }
+            if (countL == countR && countS > 0) {
+                output[1] = "unbounded";
+            }
+            else {
+                output[1] = "bounded";
+            }
+
+            countR = 0;
+            countL = 0;
+            countS = 0;
+            for (var i = 0; i < commandLine2.length; i++) {
+                if (commandLine2[i] == "R") {
+                    countR++;
+                }
+                else if (commandLine2[i] == "L") {
+                    countL++;
+                }
+                else {
+                    countS++;
+                }
+            }
+            if (countL == countR && countS > 0) {
+                output[2] = "unbounded";
+            }
+            else {
+                output[2] = "bounded";
+            }
+            ///////////////////
+            return output.join("\n");
+        }
+
+        function SolveIO() {
+            var args = [];
+            args[0] = "18";
+            args[1] = "L";
+            args[2] = "SRSL";
+            console.log(Solve(args));
+        }
+    </script>
+    <body onload="SolveIO();">
+    
+    </body>
+</html>

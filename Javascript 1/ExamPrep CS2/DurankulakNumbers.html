@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Problem 1 – Durankulak Numbers</title>
+    </head>
+    <script>
+        function isLower(char) {
+            return /[a-z]/.test(char);
+        }
+
+        function Solve(args) {
+            var input = args[0];
+
+            //Generate Durankulak Dictionary :)
+            var i = 0;
+            var j = -1;
+            var capitalLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var durankulakDict = {};
+            for (i = 0; i < 168; i++) {
+                if (i < capitalLetters.length) {
+                    durankulakDict[capitalLetters[i]] = i;
+                }
+                else {
+                    if (i % 26 == 0) {
+                        j++;
+                    }
+                    durankulakDict[ capitalLetters[j].toLowerCase() + capitalLetters[i % 26]] =i;
+                }
+            }
+
+            //Split input
+            var input = input.split("");
+            var temp = "";
+            var separated = [];
+            for (i = input.length-1; i >= 0 ; i--) {
+                if (i == 0) {
+                    temp += input[i];
+                }
+                else {
+                    if (isLower(input[i - 1])) {
+                        temp += input[i - 1] + input[i];
+                        i--;
+                    }
+                    else {
+                        temp += input[i];
+                    }
+                }
+                separated.push(temp);
+                temp = "";
+            }
+
+            //Convert durankulak number to decimal numeral system
+            var result = 0;
+            var powerOf168 = 1;
+            for (i = 0; i < separated.length; i++) {
+                result += durankulakDict[separated[i]] * powerOf168;
+                powerOf168 *= 168;
+            }
+            return result;
+        }
+
+        function SolveIO() {
+            var args = [];
+            args[0] = "CfI";
+            console.log(Solve(args));
+        }
+
+
+    </script>
+    <body onload="SolveIO();">
+
+    </body>
+</html>
