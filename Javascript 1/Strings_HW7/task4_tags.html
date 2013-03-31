@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 4</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <span> You are given a text. Write a function that changes the text in all regions:
+            <pre>
+                < upcase>text< /upcase> to uppercase.
+                < lowcase>text< /lowcase> to lowercase
+                < mixcase>text< /mixcase> to mix casing(random)
+                Sample: 0123456789 24
+                We are < mixcase>living< /mixcase> in a < upcase>yellow submarine< /upcase>. We < mixcase>don't< /mixcase> have < lowcase>anything< /lowcase> else.
+                The expected result:
+                We are LiVinG in a YELLOW SUBMARINE. We dOn'T have anything else.
+                Regions can be nested
+            </pre> </span>
+
+        <div id="js-console"></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+
+        <script>
+
+            function caseRandomize(str) {
+                var splited = str.split("");
+
+                for (var i in splited) {
+                    if (Math.random() > 0.4) {
+                        splited[i] = splited[i].toUpperCase();
+                    }
+                }
+                return splited.join("");
+            }
+
+            function customRenderer(text) {
+                var indexO = text.indexOf("<upcase>", 0);
+                var indexC = text.indexOf("</upcase>", 0);
+            
+                while (indexO >= 0) {
+                    var substr = text.substr(indexO + 8, indexC - indexO - 8);
+                    text = text.replace(substr, substr.toUpperCase());
+                    indexO = text.indexOf("<upcase>", indexC + 8);
+                    indexC = text.indexOf("</upcase>", indexC + 8);
+                }
+
+                indexO = text.indexOf("<mixcase>", 0);
+                indexC = text.indexOf("</mixcase>", 0);
+                
+                while (indexO >= 0) {
+                    var substr = text.substr(indexO + 9, indexC - indexO - 9);
+                    var textForReplace = caseRandomize(substr);
+                    text = text.replace(substr, textForReplace);
+                    indexO = text.indexOf("<mixcase>", indexC + 9);
+                    indexC = text.indexOf("</mixcase>", indexC + 9);
+                }
+
+                indexO = text.indexOf("<lowcase>", 0);
+                indexC = text.indexOf("</lowcase>", 0);
+
+
+                while (indexO >= 0) {
+                    var substr = text.substr(indexO + 8, indexC - indexO - 9);
+                    text = text.replace(substr, substr.toLowerCase());
+                    indexO = text.indexOf("<lowcase>", indexC + 9);
+                    indexC = text.indexOf("</lowcase>", indexC + 9);
+                }
+                text = text.replace("<upcase>", "");
+                text = text.replace("</upcase>", "");
+                text = text.replace("<mixcase>", "");
+                text = text.replace("</mixcase>", "");
+                text = text.replace("<lowcase>", "");
+                text = text.replace("</lowcase>", "");
+
+                return text;
+            }
+            
+            jsConsole.write( customRenderer("We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else."));
+        </script>
+    </body>
+</html>

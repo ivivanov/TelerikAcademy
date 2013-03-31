@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 2</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a JavaScript function to check if in a given expression the brackets are put correctly.
+            Example of correct expression: ((a+b)/5-d).
+            Example of incorrect expression: )(a+b)). </h3>
+
+        <div id="js-console"></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+
+        <script>
+
+            function checkExpresion(expresion) {
+                var splited = expresion.split("");
+                var open = 0;
+                var closed = 0;
+            
+                for (var i = 0; i < splited.length; i++) {
+                    if (splited[i] == "(") {
+                        open++;
+                    }
+                    if (splited[i] == ")") {
+                        closed++;
+                    }
+                    if (closed > open) {
+                        return "Inccorect!";
+                        break;
+                    }
+                }
+                if (closed == open) {
+                    return "Correct!";
+                }
+                else {
+                    return "Inccorect!";
+                }
+            }
+            
+            var expresion = "((a+b)/5-d)";
+
+            jsConsole.write(checkExpresion(expresion));
+            
+        </script>
+    </body>
+</html>

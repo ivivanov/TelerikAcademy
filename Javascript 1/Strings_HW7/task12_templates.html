@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 12</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <pre>
+            Write a function that creates a HTML UL using a template for every HTML LI.
+            The source of the list should an array of elements. Replace all placeholders marked with –{…}–
+            with the value of the corresponding property of the object. Example:
+        </pre>
+
+        <div id="js-console"></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+        <script src="../scripts/mustache.js"></script>
+        <script>
+            var data = { name: "John Smith", skills: ['JavaScript', 'PHP', 'Java'] };
+            var tpl = "{{name}} skills:<ul>{{#skills}}<li>{{.}}</li>{{/skills}}</ul>";
+            var html = Mustache.to_html(tpl, data);
+            jsConsole.writeLine(html);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 10</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe</h3>
+
+        <div id="js-console"></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+
+        <script>
+            function palindromeChecker(word) {
+                var splited = word.split("");
+                var i = 0;
+                var j = splited.length - 1;
+                var middle =splited.length / 2;
+                while (i <= middle) {
+                    if (splited[i] != splited[j]) {
+                        return false;
+                    }
+                    i++;
+                    j--;
+                }
+                return true;
+            }
+
+            function palindromeExtractor(text) {
+                var palindromes = [];
+                var words = text.split(/[\s\.,-?!)(]/);
+                for (var i = 0; i < words.length; i++) {
+                    if (words[i] == "") {
+                        words.splice(i, 1);
+                    }
+                }
+                for (var i in words) {
+                    if (palindromeChecker(words[i]) && words[i].length > 1) {
+                        palindromes.push(words[i]);
+                    }
+                }
+                return palindromes;
+            }
+
+            var text = "Write a program that extracts AAAbbbAAA, asddsa, aa, daad, from! a given? text all palindromes, e.g. ABBA, lamal, exe!";
+            var palindromes = palindromeExtractor(text);
+            for (var i in palindromes) {
+                jsConsole.writeLine(palindromes[i]);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 6</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <span>Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags.</span>
+
+        <div id="js-console"></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+
+        <script>
+            function content(htmlDoc) {
+                var result = htmlDoc.split(/<.*?>/);
+                result = result.join(" ");
+                return result;
+            }
+
+            jsConsole.write(content("<title>Task 6</title><link href=/></head><body><span>Write a function that</span>"));
+        </script>
+    </body>
+</html>

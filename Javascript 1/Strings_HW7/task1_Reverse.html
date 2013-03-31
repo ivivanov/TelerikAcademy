@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 1</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h3>Write a JavaScript function reverses string and returns itExample: "sample"  "elpmas". </h3>
+
+        <div id="js-console"></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+
+        <script>
+
+            if (!String.prototype.reverse) {
+                String.prototype.reverse = 
+                function () {
+                    return this.split("").reverse().join("");
+                }
+            }
+            
+            jsConsole.write("sample".reverse());
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 8</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <pre>
+            Write a JavaScript function that replaces in a HTML document given as string all the tags < a href="…">…< /a> with corresponding tags [URL=…]…[/URL].
+            Sample output fragment:
+            Please visit [URL=http://academy.telerik.com]our site[/URL] to choose a training course. Also visit [URL=www.devbg.org]our forum[/URL] to discuss the courses.
+        </pre>
+
+        <div id="js-console"></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+
+        <script>
+            function replaceHref(htmlText) {
+                htmlText = htmlText.replace(/<a href="/, "[URL=");
+                htmlText = htmlText.replace(/">/, "]");
+                htmlText = htmlText.replace(/<\/a>/, "[/URL]");
+                return htmlText;
+            }
+
+            var text = replaceHref ("ssdfsd fs sf dfs <a href=\"http://www.youtube.com/TelerikAcademy\"> asdasdas da asdad</a> fsd fsdf sdf ds");
+
+            jsConsole.write(text);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Task 7</title>
+        <link href="../styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <pre>
+            Write a script that parses an URL address given in the format:
+            [protocol]://[server]/[resource]
+            and extracts from it the [protocol], [server] and [resource] elements.
+            Return the elements in a JSON object.
+            For example from the URL http://www.devbg.org/forum/index.php the following information should be extracted:
+            {protocol: "http", server: "www.devbg.org",
+            resource: "/forum/index.php"}
+        </pre>
+
+        <div id="js-console"></div>
+        <script type="text/javascript" src="../scripts/js-console.js"></script>
+
+        <script>
+            //with C# :)
+            //Regex regexProtocol = new Regex(@"(?<protocol>[^.]*)://");
+            //Regex regexServer = new Regex(@"\b(://(?<server>.*?)/)\b|\b(^(?<server>[.]*?)/)\b|\b^(?<server>(www.)*?([\w\d]*\.)*([a-z]{2,3}))\b");
+            //Regex regexResource = new Regex(@"\.[a-z]{2,3}(?<resource>/.*)");
+
+            function urlParser(url) {
+                var parser = document.createElement('a');
+                parser.href = url;
+                return {
+                    protocol: parser.protocol,
+                    server: parser.hostname,
+                    resource: parser.pathname
+                }
+            }
+
+            var jsonObject = urlParser("http://www.devbg.org/forum/index.php");
+            var x;
+        </script>
+    </body>
+</html>
