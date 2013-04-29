@@ -1,0 +1,3 @@
+﻿http://diveintohtml5.info/detect.html#input-types
+http://diveintohtml5.info/detect.html#techniques
+http://afarkas.github.io/webshim/demos/
