@@ -1,3 +1,0 @@
-﻿Resources:
-http://diveintohtml5.info/geolocation.html
-https://github.com/estebanav/javascript-mobile-desktop-geolocation/
