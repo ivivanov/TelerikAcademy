@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title></title>
+	<script src="sizzle.js"></script>
+	<script type="text/javascript">
+		document.querySelector=function (query) {
+			return Sizzle(query)[0];
+		}
+		document.querySelectorAll =function (query) {
+			return Sizzle(query);
+		}
+	</script>
+</head>
+<body>
+<div id="di">
+	<span id="sp">
+		<ul>
+			<li class="c"> item1
+			</li>
+		</ul>
+	</span>
+</div>
+<span>
+	<p>
+		<ul>
+			<li class="c"> item2
+			</li>
+		</ul>
+	</p>
+</span>
+<script>
+	//demo
+	var firstSpan = document.querySelector("span");
+	console.log(firstSpan.outerHTML)
+
+	var firstUl = document.querySelector("span>ul");
+	console.log(firstUl.outerHTML)
+
+	var allClassC = document.querySelectorAll(".c");
+	for (var i = 0; i < allClassC.length; i++) {
+		console.log(allClassC[i].outerHTML);
+	};
+</script>
+
+</body>
+</html>

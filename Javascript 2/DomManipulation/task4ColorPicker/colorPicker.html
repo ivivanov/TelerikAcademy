@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Task 4 - Color Picker</title>
+	<style type="text/css">
+		textarea{
+			display:  block;
+			width: 400px;
+			height: 200px;
+		}
+		#wrapper{
+			width: 900px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<span>Font: </span>
+		<input type="color" id="cp2" oninput="changeFontColor()" />
+		<span>Backgound: </span>
+		<input type="color" id="cp1" oninput="changeBackColor()" />
+		<textarea id="ta">Some text one two three four fiveSome text one two three four fiveSome text one two three four five</textarea>
+		<script type="text/javascript" src="colorPicker.js"></script>
+	</div>
+</body>
+</html>

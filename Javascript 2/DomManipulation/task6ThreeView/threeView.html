@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title></title>
+		<script src="jquery-1.9.1.js"></script>
+		<script src="jquery.treeview.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#tree").treeview({
+					collapsed: true
+				});
+			});
+		</script>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<ul id="tree">
+			<li>
+				<span>Item</span>
+			</li>
+			<li>
+				<span>Item</span>
+				<ul>
+					<li>
+						<span>Sub Item</span>
+						<ul>
+							<li>
+								<span>Sub Sub Item</span>
+								<ul>
+									<li>
+										<span>Sub Sub Sub Item</span>
+									</li>
+									<li>
+										<span>Sub Sub Sub Item</span>
+									</li>
+									<li>
+										<span>Sub Sub Sub Item</span>
+									</li>
+									<li>
+										<span>Sub Sub Sub Item</span>
+									</li>
+									<li>
+										<span>Sub Sub Sub Item</span>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<span>Sub Item</span>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<span>Item</span>
+				<ul>
+					<li>
+						<span>Sub Item</span>
+						<ul>
+							<li>
+								<span>Sub Sub Item</span>
+							</li>
+							<li>
+								<span>Sub Sub Item</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<span>Item</span>
+			</li>
+			<li>
+				<span>Item</span>
+			</li>
+		</ul>
+	</body>
+</html>

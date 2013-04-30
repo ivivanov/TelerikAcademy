@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Task 5 - Tag Cloud</title>
+	<style type="text/css">
+		#cloud{
+			padding: 10px;
+			width: 300px;
+			height: 500px;
+			border: 1px solid black;
+			border-radius: 10px;
+			position: relative;
+		}
+		span{
+			display: inline-block;
+			margin-right: 10px;
+			text-wrap:none;
+			position: relative;
+		}
+		textarea{
+			width: 250px;
+			height: 200px;
+			display: block;
+		}
+		form{
+			padding: 10px;
+			width: 250px;
+			height: auto;
+			display: block;
+			border: 1px solid black;
+		}
+		.floatleft{
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+	<form>
+		<textarea id="sampleTags">cms, javascript, js, ASP.NET MVC, .net, .net, css, wordpress, xaml, js, http, web, asp.net, asp.net MVC, ASP.NET MVC, wp, javascript, js, cms, html, javascript, http, http, CMS</textarea>
+		<label for="minFont">Minimal font size: </label>
+		<input id="minFont" type="range" name="min" min="10" max="70" value="17" />
+		<label for="maxFont">Maximal font size: </label>
+		<input id="maxFont" type="range" name="max" min="10" max="70" value="42" />
+		<input type="button" onclick="generateFromInput()" value="Generate" />
+		<input type="button" onclick="clearAll()" value="Clear All" />
+	</form>
+	<div id="cloud">
+		
+	</div>	
+	<script type="text/javascript" src="tagCloud.js"></script>
+</body>
+</html>
