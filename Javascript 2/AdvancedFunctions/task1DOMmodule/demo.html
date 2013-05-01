@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Task 1 - tests</title>
+	<script type="text/javascript">
+		function appendChildTest() {
+			var div = document.createElement('div');
+			div.innerHTML = "appendChild div to section one!";
+			domModule.appendChild(div, '#one');
+
+			var div2 = document.createElement('div');
+			div2.innerHTML = "appendChild div2 to section two!";
+			domModule.appendChild(div2, '#two');
+		}
+
+		function removeChildTest() {
+			domModule.removeChild('ul', 'li:first-child');
+			domModule.removeChild('section', 'div');
+		}
+
+		function addHandlerTest() {
+
+			domModule.addHandler("a", 'click', function() {
+				var item = document.querySelector('a');
+				item.innerHTML = item.innerHTML + " <- CLICKED";
+			});
+			var item = document.querySelector('a');
+			item.innerHTML = item.innerHTML + " <- click event added";
+		}
+
+		function addToBufferTest() {
+			for (var i = 0; i < 99; i++) {
+				var span = document.createElement('span');
+				span.innerHTML = " " + i + " ";
+				domModule.appendToBuffer('#one',span);
+			}
+		}
+	</script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<input type="button" onclick="appendChildTest()" value="add child" />
+	<input type="button" onclick="removeChildTest()" value="remove child" />
+	<input type="button" onclick="addHandlerTest()" value="add event" />
+	<input type="button" onclick=" addToBufferTest()" value="add to buffer" />
+	<section id="one"></section>	
+	<section id="two"></section>	
+	<ul>
+		<li>item 1</li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ul>
+		<li>item 1</li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ul>
+		<li>item 1</li>
+		<li></li>
+		<li><a href="#">Link</a></li>
+	</ul>
+	<script type="text/javascript" src="domModule.js"></script>
+</body>
+</html>

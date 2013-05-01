@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 2 - Demo</title>
+	<script type="text/javascript" src="movingShapes.js"></script>
+	<script type="text/javascript" >
+		function addCircleTest() {
+			movingShapes.addElement("circle");
+		}
+
+		function addEllipseTest() {
+			movingShapes.addElement("ellipse");
+		}
+
+		function addRectangularTest() {
+			movingShapes.addElement("rectangular");
+		}
+	</script>
+	<style type="text/css">
+		section{
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			top:150px;
+			left: 100px;
+		}
+		#circle{
+			border-radius: 400px;
+		}
+		#ellipse{
+			width: 600px;
+			height: 250px;
+			border-radius: 400px;
+			top:600px;
+			left:100px;
+		}
+		#rectangular{
+			left:500px;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="Add to Circle" onclick="addCircleTest()" />
+	<input type="button" value="Add to Ellipse" onclick="addEllipseTest()" />
+	<input type="button" value="Add to Rectang" onclick="addRectangularTest()" />
+
+	<section id="circle"></section>
+	<section id="rectangular"></section>
+	<section id="ellipse"></section>
+</body>
+</html>
