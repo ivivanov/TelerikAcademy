@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title></title>
+	<script src="utils.js"></script>
+	<script src="classPropulsionUnit.js"></script>
+	<script src="classVehicle.js"></script>
+	<script>
+		function test(unit) {
+			console.log(unit.constructor.name);
+			console.log(unit.speed);
+			unit.accelerate();
+			console.log(unit.speed);
+		}
+
+		var vw = new LandVehicle([new Wheel(19), new Wheel(19), new Wheel(19), new Wheel(19)]);
+		test(vw);
+
+		var propeller = new Propeller(100);
+		var golfShip = new AmphibiousVehicle([new Wheel(13), new Wheel(13), new Wheel(13), new Wheel(13)], [propeller]);
+		test(golfShip);
+		golfShip.switchMode();
+		test(golfShip);
+		propeller.spinDirection = direction.COUNTERCLOCKWISE;
+		test(golfShip);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
