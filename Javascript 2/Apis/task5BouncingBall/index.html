@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>
+			Task 5 - Bounceing
+		</title>
+		<style type="text/css">
+			body{
+				margin: 0;
+			}
+			#myCanvas{
+				background-image: url('troll.png');
+				background-repeat: no-repeat;
+			}
+
+		</style>
+		<script type="text/javascript">
+			var context;
+			var x = 200;
+			var y = 200;
+			var dx = 4;
+			var dy = 4;
+
+			function init() {
+				context = myCanvas.getContext('2d');
+				context.fillRect(0,0,550,448);
+				setInterval(draw, 10);
+			}
+
+			function draw() {
+				context.clearRect(x, y, 15, 15);
+				context.beginPath();
+				//context.fillStyle = "rgba(124,185,222,0.1)";
+				// context.arc(x, y, 10, 0, Math.PI * 2, true);
+				context.closePath();
+				context.fill();
+				// Boundary Logic
+				if (x < 0 || x > 550) dx = -dx;
+				if (y < 0 || y > 448) dy = -dy;
+				x += dx;
+				y += dy;
+			}
+		</script>
+	</head>
+	<body onload="init();">
+		<canvas id="myCanvas" width="550" height="448"></canvas>
+	</body>
+</html>

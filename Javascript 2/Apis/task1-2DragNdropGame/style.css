@@ -1,0 +1,198 @@
+#wrapper{
+	width: 900px;
+	height: 700px;
+	border: 1px solid black;
+	border-radius: 10px;
+	font-family:'Verdana',Arial,sans-serif;
+	font-size:14px;
+	text-shadow:#b2e2f5 0 1px 0;
+}
+
+#nav{
+	padding: 10px;
+	border-bottom: 1px solid black;
+}
+	
+	#nav h1{
+		text-transform:uppercase;
+		display: inline;
+		font-size: 16px;
+		font-weight: normal;
+		margin-left: 150px;
+	}
+
+	#nav #highscore{
+		margin-left: 150px;
+	}
+
+	#nav img{
+		position: absolute;
+		top:3px;
+		left:380px;
+	}
+	#nav img+img{
+		left: 550; 
+	}
+
+#gameField{
+	height: 650px;
+}
+
+#trashcanArea{
+	width: 200px;
+	height: 650px;
+	float: left;
+	text-align: left;	
+}
+
+	#trashcan{
+		width: 200px;
+		height: 200px;
+	}
+
+	#collected{
+		font-style: italic;
+		font-size: 16px;	
+		display: block;
+		margin-top: 40px;
+		margin-left:60px;
+	}
+
+#garbageArea{
+	width: 699px;
+	height: 650px;
+	position: relative;
+	float: left;
+}
+
+	#garbageArea div{
+		cursor: move;
+	}
+
+.beer1{
+	width: 90px;
+	height: 86px;
+	position: absolute;
+	background: url('imgs/emptybeer1.png');
+}
+
+.beer2{
+	width: 90px;
+	height: 86px;
+	position: absolute;
+	background: url('imgs/emptybeer2.png');
+}
+
+.beer3{
+	width: 90px;
+	height: 86px;
+	position: absolute;
+	background: url('imgs/emptybeer3.png');
+}
+
+input[type="button"] {
+	min-width: 100px;
+	margin-right: 20px;
+	-webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	-moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	border-bottom-color:#333;
+	border:1px solid #61c4ea;
+	background-color:#7cceee;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	color:#333;
+	padding:5px;
+}
+
+input[type="button"]:hover {
+	background-color: rgba(124, 206, 238, 0.8);
+	cursor: pointer;
+}
+
+select{
+	min-width: 100px;
+	height: 30px;
+	overflow: hidden;
+	-webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	-moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+	border-bottom-color:#333;
+	border:1px solid #61c4ea;
+	background-color:#7cceee;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	color:#333;
+	padding:5px;
+}
+
+select:hover{
+	cursor: pointer;
+}
+
+#timetextarea{
+	font-size: 20px;
+	font-style: italic;
+	border:none;
+	margin-top: 100px;
+	margin-left:60px;
+}
+
+#scoretable{
+	display: none;
+	position: absolute;
+	top:60px;
+	left:580px;
+	width: 300px;
+	height: 150px;
+}
+	#scoretable table{
+		border-collapse: collapse;
+		width: 250px;
+	}
+
+	#scoretable table td{
+		border: 1px solid black;
+		padding: 5px;
+	}
+
+	#topPlayers{
+		margin-top: 10px;
+	}
+
+#newScore{
+	display: none;
+	position: absolute;
+	top:60px;
+	left:260px;
+	width: 300px;
+	height: 150px;
+}
+	#newScore #time{
+		
+	}
+
+	#newScore fieldset{
+		padding: 15px 10px 10px 10px;
+	}
+	
+	#newScore label, #newScore input{
+		margin-top: 10px;
+	}
+
+	#newScore fieldset input[type="text"]{
+		width: 100px;
+	}
+
+.close{
+	display: inline-block;
+	position: relative;
+	top: 30px;
+	left: 275px;
+}
+
+.close:hover{
+	cursor: pointer;
+}

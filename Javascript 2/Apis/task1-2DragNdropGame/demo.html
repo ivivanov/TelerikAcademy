@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>Garbage collerctor game</title>
+	<script src="game.js"></script>
+	<script src="dragNdropUtils.js"></script>
+	<script src="chronometer.js"></script>
+	<script src="localStorage.js"></script>
+	<script src="localStorageShiv.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="nav">
+			<input type="button" value="Start" onclick="startGame()" />
+			<span>Level </span>
+			<select id="level">
+				<option value="5">Begginer</option>
+				<option value="9">Intermediate</option>
+				<option value="13">Advanced</option>
+				<option value="17">Expert</option>
+			</select>
+			<img src="imgs/broom.png" />
+			<img src="imgs/shovel.png">
+			<h1>Volf Exam</h1>
+			<input id="highscore" type="button" value="High Scores" onclick="displayHighscores()"/>
+		</div>
+		<div id="gameField">
+			<div id="trashcanArea">
+				<form name="timeform">
+					<input 	type="text" name="timetextarea" id="timetextarea" value="00:00" />
+				</form>
+				<img id="trashcan" src="imgs/trash_close.png" draggable="false" />
+				<span id="collected"></span>
+			</div>
+			<div id="garbageArea">
+			</div>
+		</div>
+
+		<div id="scoretable">
+			<div class="close" onclick="displayHighscores()">x</div>
+			<fieldset>
+				<legend>Top Players</legend>
+				<div id="topPlayers"></div>
+			</fieldset>
+		</div>
+
+		<div id="newScore">
+			<div class="close" onclick="closeNewScore()">x</div>
+            <fieldset>
+                <legend>Enter new score</legend>
+                <div>
+	                <label for="username">Name: </label>
+	                <input type="text" id="username">
+	            </div>
+	            <div>  
+	                <label>Time: </label>
+	                <span id="time"></span>
+	            </div>    
+                <input type="button" onclick="onSaveButtonClick()" value="Save score" />
+            </fieldset>
+        </div>
+	</div>
+	<script type="text/javascript" src="gameUtils.js"></script>
+</body>
+</html>
