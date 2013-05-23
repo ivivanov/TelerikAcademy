@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="accordion.js"></script>
+	<script type="text/javascript" src="schoolRepository.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="accordion"></div>
+	<div id="accordion2"></div>
+	<script type="text/javascript">
+		var accordion = controls.getAccordion("#accordion");
+		var webItem = accordion.add("Web");
+			webItem.add("HTML");
+			webItem.add("CSS");
+			var js = webItem.add("JavaScript");
+				js.add("jQuery");
+			webItem.add("ASP.NET MVC");
+		accordion.add("Desktop");
+		var mobile = accordion.add("Mobile");
+			mobile.add("Iphone");
+			mobile.add("Android");
+		accordion.add("Embedded");
+		accordion.render();
+
+		localStorage.clear();
+		localStorage.setObject("serAccordion",accordion.serialize());
+		var serAcc = localStorage.getObject("serAccordion");
+		var accordion2 = controls.setAccordion("#accordion2",serAcc);
+		accordion2.render();
+
+		// localStorage.serializedAccordion = serializedAccordion;
+		// var accordion2 = JSON.parse(localStorage['serializedAccordion']);
+		// var accordion2 = controls.setAccordion("#accordion2", serializedAccordion);
+		// accordion2.render();
+		// console.log(accordion2);
+	</script>
+
+</body>
+</html>

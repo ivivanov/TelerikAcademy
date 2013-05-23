@@ -1,0 +1,17 @@
+div{
+	margin-bottom: 20px;
+	ul{
+		margin: 0;
+		padding: 0;
+		
+	}
+	li{
+			list-style: none;
+			width: 200px;
+			background-color: rgba(133,133,133,0.5);
+			text-align: center;
+			a{
+				text-decoration: none;
+			}
+		}
+}
