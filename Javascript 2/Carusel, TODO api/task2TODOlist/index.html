@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title>TODO list</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <input type="text" id="inputtext"/>
+        <input type="button" onclick="todoModule.add()" value="Add" />
+        <input type="button" onclick="todoModule.remove()" value="Remove selected" />
+        <input type="button" onclick="todoModule.hide()" value="Hide selected" />
+        <input type="button" onclick="todoModule.show()" value="Show hidden" />
+        <span>TODO list: </span>
+        <ul id="todo"></ul>
+    </div>
+	<script type="text/javascript" src="todo.js"></script>
+</body>
+</html>

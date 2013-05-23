@@ -1,0 +1,55 @@
+﻿body, div
+{
+    padding: 0;
+    margin: 0;
+}
+
+.animation
+{
+    -webkit-transition: left .6s cubic-bezier(.1, 0, .01, 1);
+    -moz-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+    -o-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+    transition: left .6s cubic-bezier(.2, 1, 1, .2);
+}
+
+div#slider
+{
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+div#galery
+{
+    width: 1000%;
+    position: relative;
+    left: 0;
+    zoom: 1;
+}
+
+    div#galery:after
+    {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    
+div#left-arrow{
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 100px;
+    left: 500px;
+    background-image:  url("images/left-arrow.png");
+}
+div#right-arrow{
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 100px;
+    right: 500px;
+    background-image:  url("images/right-arrow.png");
+}

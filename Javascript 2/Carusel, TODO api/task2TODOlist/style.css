@@ -1,0 +1,25 @@
+div#wrapper {
+	margin: 0 auto;
+	width: 400px;
+	border:1px solid gray;
+	border-radius: 10px;
+	padding: 10px;
+}
+	div#wrapper input{
+		display: inline-block;
+	}
+
+	div#wrapper input:nth-child(1){
+		width: 100%;
+	}
+
+	div#wrapper span{
+		display: block;
+		margin: 10px 0 0 0;
+		border-top: 1px solid gray;
+		text-align: center;
+	}
+
+#todo {
+	list-style-image: url('icon.png');
+}

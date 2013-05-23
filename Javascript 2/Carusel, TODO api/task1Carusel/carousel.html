@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 1 - Carousel</title>
+    <link href="carousel.css" rel="stylesheet" />
+    <script src="carousel.js"></script>
+</head>
+<body>
+    <div id="left-arrow" onclick="carousel.previous()"></div>
+    <div id="right-arrow" onclick="carousel.next()"></div>
+    <div id="slider">
+        <div id="galery" class="animation">
+        </div>
+    </div>
+
+    <script>
+        var imagesFragment = document.createDocumentFragment();
+        for (var i = 0; i < 6; i++) {
+            var img = document.createElement('img');
+            img.src='images/'+i+'.jpg';
+            img.className='slider-img';
+            imagesFragment.appendChild(img);
+        }
+        var galery = document.getElementById('galery');
+        galery.appendChild(imagesFragment);
+        carousel.init();
+
+    </script>
+</body>
+</html>
